@@ -1,17 +1,20 @@
-\documentclass[10pt,letterpaper]{article} % add ``,titlepage'' after ``letterpaper'' to get a separate page for the title information
+\documentclass[10pt,letterpaper]{article} % Add ``,titlepage'' after ``letterpaper'' to get a separate page for the title information
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 %\usepackage{times} % Use Times New Roman instead of Computer Modern
 %\usepackage[margin=1in]{geometry} % Use 1 inch margins (all around)
+%\usepackage{setspace} % For double spacing, etc.
 %\usepackage{soul} % Use \ul{text} for underlining text
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 %\usepackage{amsthm}
 %\usepackage{multirow}
+%\usepackage[tone]{tipa} % For the International Phonetic Alphabet. Type \textipa{text} to typeset
 %\usepackage{tikz}
-%\usepackage[colorlinks=true,urlcolor=blue]{hyperref} % Must be last package, except for ellipsis
+%\usetikzlibrary{decorations.markings}
+%\usepackage[colorlinks=true,urlcolor=blue]{hyperref} % Must be last package, except for ellipsis. ``\usepackage[hidelinks]{hyperref}'' works on newer versions
 \usepackage{ellipsis}
 %%%%%%%%%%%%%%%%%%%% Document information
 %\title{TitleOfDocument}
@@ -23,6 +26,10 @@
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
 \newtheorem{ax}{Axiom}[section]
+\newtheorem{cor}{Corollary}[section]
+
+%\doublespacing % Use with the ``setspace'' package
+%\onehalfspacing % Use with the ``setspace'' package
 
 
 \begin{document}
