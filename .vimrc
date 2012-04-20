@@ -84,7 +84,7 @@ set modelines=0
         autocmd filetype tex inoremap <buffer> <localleader>m \(\)<Esc>hi
         autocmd filetype tex inoremap <buffer> <localleader>p \[<CR><CR>\]<Esc>kI
         autocmd filetype tex inoremap <buffer> <localleader>i <Esc>:set paste<CR>i\begin{itemize}<CR>    \item <CR>\end{itemize}<Esc>:set nopaste<CR>kA
-        autocmd filetype tex inoremap <buffer> <F5>e <Esc>:set paste<CR>i\begin{enumerate}<CR>    \item <CR>\end{enumerate}<Esc>:set nopaste<CR>kA
+        autocmd filetype tex inoremap <buffer> <localleader>e <Esc>:set paste<CR>i\begin{enumerate}<CR>    \item <CR>\end{enumerate}<Esc>:set nopaste<CR>kA
     augroup END
 " Python options
     augroup filetype_python
