@@ -49,6 +49,7 @@ set modelines=0
     inoremap jj <Esc>
     inoremap kk <Esc>
     inoremap jk <Esc>
+    inoremap kj <Esc>
     nnoremap j gj
     nnoremap k gk
     nnoremap H ^
@@ -77,14 +78,14 @@ set modelines=0
         autocmd!
         autocmd filetype tex nnoremap <buffer> <localleader>c I%<Esc>
         autocmd filetype tex nnoremap <buffer> <silent> <localleader><localleader> :!pdflatex %<CR>
-        autocmd filetype tex inoremap <buffer> <localleader>b \textbf{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <localleader>h \emph{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <localleader>u \ul{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <localleader>t \term{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <localleader>m \(\)<Esc>hi
-        autocmd filetype tex inoremap <buffer> <localleader>p \[<CR><CR>\]<Esc>kI
-        autocmd filetype tex inoremap <buffer> <localleader>i <Esc>:set paste<CR>i\begin{itemize}<CR>    \item <CR>\end{itemize}<Esc>:set nopaste<CR>kA
-        autocmd filetype tex inoremap <buffer> <localleader>e <Esc>:set paste<CR>i\begin{enumerate}<CR>    \item <CR>\end{enumerate}<Esc>:set nopaste<CR>kA
+        autocmd filetype tex inoremap <buffer> <F5>b \textbf{}<Esc>i
+        autocmd filetype tex inoremap <buffer> <F5>h \emph{}<Esc>i
+        autocmd filetype tex inoremap <buffer> <F5>u \ul{}<Esc>i
+        autocmd filetype tex inoremap <buffer> <F5>t \term{}<Esc>i
+        autocmd filetype tex inoremap <buffer> <F5>m \(\)<Esc>hi
+        autocmd filetype tex inoremap <buffer> <F5>p \[<CR><CR>\]<Esc>kI
+        autocmd filetype tex inoremap <buffer> <F5>i <Esc>:set paste<CR>i\begin{itemize}<CR>    \item <CR>\end{itemize}<Esc>:set nopaste<CR>kA
+        autocmd filetype tex inoremap <buffer> <F5>e <Esc>:set paste<CR>i\begin{enumerate}<CR>    \item <CR>\end{enumerate}<Esc>:set nopaste<CR>kA
     augroup END
 " Python options
     augroup filetype_python
