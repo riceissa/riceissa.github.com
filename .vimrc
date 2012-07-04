@@ -1,3 +1,5 @@
+filetype off
+call pathogen#infect()
 set nocompatible
 set nomodeline
 set modelines=0
@@ -18,34 +20,32 @@ set modelines=0
     set expandtab shiftwidth=4 softtabstop=4 tabstop=4
 " Custom user mappings
     " Leader mappings
-        let mapleader=' '
+        let mapleader=','
         let localleader = '\\'
         nnoremap <silent> <leader><leader> :nohlsearch<CR>
-        nnoremap <silent> <leader>c :set list!<CR>
-        nnoremap <silent> <leader>n :set number!<CR>
-        nnoremap <silent> <leader>p :set paste!<CR>
-        nnoremap <silent> <leader>s :set spell!<CR>
-        nnoremap <silent> <leader>w :set wrap!<CR>
-        nnoremap <silent> <leader>e :tabnew $MYVIMRC<CR>
-        nnoremap <silent> <leader>r :source $MYVIMRC<CR>
+        nnoremap <silent> <leader>I :set list!<CR>
+        nnoremap <silent> <leader>N :set number!<CR>
+        nnoremap <leader>p :set paste! paste?<CR>
+        nnoremap <leader>sp :set spell! spell?<CR>
+        nnoremap <leader>W :set wrap! wrap?<CR>
+        nnoremap <silent> <leader>ev :tabnew $MYVIMRC<CR>
+        nnoremap <leader>sv :source $MYVIMRC<CR>
+        nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+        nnoremap <leader>u :GundoToggle<CR>
         nnoremap <leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
         nnoremap <leader>' viw<Esc>a'<Esc>hbi'<Esc>lel
-    " Scrolling (use <space>{j,k} or <C-{j,k}> to scroll)
-        nnoremap <leader>j <C-d>
-        vnoremap <leader>j <C-d>
-        nnoremap <C-j> <C-d>
-        vnoremap <C-j> <C-d>
-        nnoremap <leader>k <C-u>
-        vnoremap <leader>k <C-u>
-        nnoremap <C-k> <C-u>
-        vnoremap <C-k> <C-u>
+    " Scrolling
+        nnoremap <Space> <C-f>
+        nnoremap - <C-b>
+    " Windows
+        nnoremap <C-h> <C-w>h
+        nnoremap <C-j> <C-w>j
+        nnoremap <C-k> <C-w>k
+        nnoremap <C-l> <C-w>l
     " Tabs
-        nnoremap <silent> <leader>t :tabnew<CR>
         nnoremap <silent> <C-t> :tabnew<CR>
-        nnoremap <silent> <leader>l :tabn<CR>
-        nnoremap <silent> <C-l> :tabn<CR>
-        nnoremap <silent> <leader>h :tabp<CR>
-        nnoremap <silent> <C-h> :tabp<CR>
+        nnoremap <silent> <C-n> :tabn<CR>
+        nnoremap <silent> <C-p> :tabp<CR>
     inoremap jj <Esc>
     inoremap kk <Esc>
     inoremap jk <Esc>
@@ -54,20 +54,20 @@ set modelines=0
     nnoremap k gk
     nnoremap H ^
     nnoremap L $
+    nnoremap <Enter> o<Esc>
     nnoremap <silent> K :bn<CR>
     inoremap <C-u> <Esc>viwUea
     nnoremap <C-u> viwU
-    nnoremap - ddp
-    nnoremap _ ddkP
     onoremap p i(
     onoremap in( :<C-u>normal! f(vi(<CR>
     onoremap il( :<C-u>normal! F)vi(<CR>
 " Other
-    set backspace=indent,eol,start cmdheight=2 encoding=utf-8 hidden
-    set nospell number ruler scrolloff=5 showcmd showmode
-    set spellfile=~/.spell.en.add title ttyfast wildmenu wrap
+    set backspace=indent,eol,start cmdheight=2 encoding=utf-8 gdefault
+    set hidden nospell number ruler scrolloff=5 shiftround showcmd
+    set showmode spellfile=~/.spell.en.add title ttyfast wildmenu wrap
 " HTML options
     augroup filetype_html
+        autocmd!
         autocmd filetype html setlocal shiftwidth=2 softtabstop=2 tabstop=2
         autocmd filetype xhtml setlocal shiftwidth=2 softtabstop=2 tabstop=2
         autocmd filetype xml setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -76,24 +76,16 @@ set modelines=0
     let g:tex_flavor='latex'
     augroup filetype_tex
         autocmd!
-        autocmd filetype tex nnoremap <buffer> <localleader>c I%<Esc>
-        autocmd filetype tex nnoremap <buffer> <silent> <localleader><localleader> :!pdflatex %<CR>
-        autocmd filetype tex inoremap <buffer> <F5>b \textbf{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <F5>h \emph{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <F5>u \ul{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <F5>t \term{}<Esc>i
-        autocmd filetype tex inoremap <buffer> <F5>m \(\)<Esc>hi
-        autocmd filetype tex inoremap <buffer> <F5>p \[<CR><CR>\]<Esc>kI
-        autocmd filetype tex inoremap <buffer> <F5>i <Esc>:set paste<CR>i\begin{itemize}<CR>    \item <CR>\end{itemize}<Esc>:set nopaste<CR>kA
-        autocmd filetype tex inoremap <buffer> <F5>e <Esc>:set paste<CR>i\begin{enumerate}<CR>    \item <CR>\end{enumerate}<Esc>:set nopaste<CR>kA
+        autocmd filetype tex nnoremap <buffer> <silent> <localleader>la :!latexmk -pdf %<CR>
+        autocmd filetype tex nnoremap <buffer> <silent> <localleader>xe :!xelatex %<CR>
     augroup END
-" Python options
-    augroup filetype_python
-        autocmd!
-        autocmd filetype python nnoremap <buffer> <localleader>c I#<Esc>
-        autocmd filetype python :iabbrev <buffer> iff if:<left>
-    augroup END
+" Plugins
+    " EasyMotion
+        let g:EasyMotion_leader_key = '<leader><leader>'
 " Abbreviations
     iabbrev adn and
+    iabbrev nad and
+    iabbrev teh the
+    iabbrev het the
     iabbrev tehn then
     iabbrev waht what
