@@ -2,7 +2,6 @@
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage{times} % Use Times New Roman instead of Computer Modern
 %\usepackage[margin=1in]{geometry} % Use 1 inch margins (all around)
 %\usepackage{setspace} % For double spacing, etc.
 %\usepackage[parfill]{parskip} % New paragraphs get an empty line rather than an indent
@@ -11,18 +10,34 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 %\usepackage{amsthm}
+%\usepackage[mathscr]{euscript} % For scripted letters in maths
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
-%\usepackage{multirow}
 \usepackage{booktabs}
+%\usepackage{multirow}
 \usepackage{array}
 \usepackage{paralist}
 \usepackage{verbatim}
 \usepackage{subfig}
 \usepackage{graphicx}
+%\usepackage{textcomp} % To obtain straight single (') and double (") quotes (instead of curly ones); use \textquotesingle and \textquotedbl
+% Note however that \textquotedbl comes from the fontenc package
+%\usepackage{listings} % For displaying source code; for example use \begin{lstlisting}[language=tex]code here\end{lstlisting} to show LaTeX code
+%\lstset{upquote=true} % Don't make quotes curly when displaying code using the listings package
 %\usepackage[tone]{tipa} % For the International Phonetic Alphabet. Type \textipa{text} to typeset
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
+%%%%%%%%%%%%%%%%%%%% Fonts
+% Some fonts with (at least partial) maths support
+\usepackage{lmodern} % Computer Modern, but apparently enhanced
+%\usepackage{mathptmx} % Times New Roman
+%\usepackage{fouriernc}
+%\usepackage{mathpazo}
+%\usepackage{bookman}
+%\usepackage{pxfonts}
+%\usepackage[utopia]{mathdesign}
+%\usepackage[charter]{mathdesign}
+%%%%%%%%%%%%%%%%%%%% Packages (continued)
 %\usepackage{hyperref} % Must be last package, except for ellipsis.
 \usepackage{ellipsis}
 %%%%%%%%%%%%%%%%%%%% Document information
@@ -30,6 +45,7 @@
 %\author{AuthorOfDocument}
 %\date{\today{}} % Uncomment and leave this empty to have no date
 %%%%%%%%%%%%%%%%%%%% Custom commands
+\newcommand{\strong}[1]{\textbf{#1}} % See the Wikipedia article on ``Separation of concerns'' and ``Separation of presentation and content''
 \newcommand{\term}[1]{\textbf{#1}}
 %%%%%%%%%%%%%%%%%%%% For maths
 %\theoremstyle{definition}
@@ -43,8 +59,7 @@
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing % Use with the ``setspace'' package
 %\onehalfspacing % Use with the ``setspace'' package
-
-
+%%%%%%%%%%%%%%%%%%%% Begin document
 \begin{document}
 %\maketitle
 %\tableofcontents
@@ -53,5 +68,5 @@
 
 
 \end{document}
-
+%%%%%%%%%%%%%%%%%%%% End document
 
