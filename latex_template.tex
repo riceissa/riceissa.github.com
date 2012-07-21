@@ -1,3 +1,4 @@
+\RequirePackage[12tabu, orthodox]{nag}
 \documentclass[10pt,letterpaper]{article} % Add ``,titlepage'' after ``letterpaper'' to get a separate page for the title information
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
@@ -7,9 +8,11 @@
 %\usepackage[parfill]{parskip} % New paragraphs get an empty line rather than an indent
 %\usepackage{soul} % Use \ul{text} for underlining text
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 %\usepackage{amsthm}
+\usepackage{siunitx}
 %\usepackage[mathscr]{euscript} % For scripted letters in maths
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
@@ -20,6 +23,7 @@
 \usepackage{verbatim}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage{cleveref}
 %\usepackage{textcomp} % To obtain straight single (') and double (") quotes (instead of curly ones); use \textquotesingle and \textquotedbl
 % Note however that \textquotedbl comes from the fontenc package
 %\usepackage{listings} % For displaying source code; for example use \begin{lstlisting}[language=tex]code here\end{lstlisting} to show LaTeX code
@@ -38,6 +42,7 @@
 %\usepackage[utopia]{mathdesign}
 %\usepackage[charter]{mathdesign}
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
+\usepackage{microtype}
 %\usepackage{hyperref} % Must be last package, except for ellipsis.
 \usepackage{ellipsis}
 %%%%%%%%%%%%%%%%%%%% Document information
@@ -56,6 +61,13 @@
 %\newtheorem{lemma}{Lemma}[section]
 %\newtheorem{prop}{Proposition}[section]
 %\newtheorem{rem}{Remark}[section]
+%\crefname{ax}{axiom}{axioms}
+%\crefname{cor}{corollary}{corollaries}
+%\crefname{defn}{definition}{definitions}
+%\crefname{ex}{example}{examples}
+%\crefname{lemma}{lemma}{lemmas}
+%\crefname{prop}{propositions}{propositions}
+%\crefname{remark}{remark}{remarks}
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing % Use with the ``setspace'' package
 %\onehalfspacing % Use with the ``setspace'' package
