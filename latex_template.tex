@@ -13,6 +13,7 @@
 \usepackage{amssymb}
 \usepackage{mathrsfs} % Example: \mathscr{A}
 %\usepackage{amsthm}
+%\usepackage{thmtools}
 %\usepackage{siunitx}
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
@@ -53,29 +54,34 @@
 \newcommand{\strong}[1]{\textbf{#1}} % See the Wikipedia article on ``Separation of concerns'' and ``Separation of presentation and content''
 \newcommand{\term}[1]{\textbf{#1}}
 %%%%%%%%%%%%%%%%%%%% For maths
-%\theoremstyle{definition}
-%\newtheorem{ax}{Axiom}[section]
-%\newtheorem{cor}{Corollary}[section]
-%\newtheorem{defn}{Definition}[section]
-%\newtheorem*{di}{Discussion}
-%\newtheorem{ex}{Example}[section]
-%\newtheorem{exer}{Exercise}[subsection]
-%\newtheorem{lemma}{Lemma}[section]
-%\newtheorem*{note}{Note}
-%\newtheorem{prop}{Proposition}[section]
-%\newtheorem*{remark}{Remark}[section]
-%\newtheorem{thm}{Theorem}[subsection]
-%\crefname{ax}{axiom}{axioms}
-%\crefname{cor}{corollary}{corollaries}
-%\crefname{defn}{definition}{definitions}
-%\crefname{di}{discussion}{discussions}
-%\crefname{ex}{example}{examples}
-%\crefname{exer}{exercise}{exercises}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),parent=subsection]{theorem}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{axiom}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{corollary}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{definition}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{discussion}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{example}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{exercise}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{lemma}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{note}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{proposition}
+%\declaretheorem[style=definition,qed=\(\blacksquare\),sibling=theorem]{remark}
+%\crefname{axiom}{axiom}{axioms}
+%\crefname{corollary}{corollary}{corollaries}
+%\crefname{definition}{definition}{definitions}
+%\crefname{discussion}{discussion}{discussions}
+%\crefname{example}{example}{examples}
+%\crefname{exercise}{exercise}{exercises}
 %\crefname{lemma}{lemma}{lemmas}
 %\crefname{note}{note}{notes}
-%\crefname{prop}{propositions}{propositions}
+%\crefname{proposition}{proposition}{propositions}
 %\crefname{remark}{remark}{remarks}
-%\crefname{thm}{theorem}{theorems}
+%\crefname{theorem}{theorem}{theorems}
+% Abbreviations for sets of numbers
+\newcommand{\N}{\ensuremath{\mathbf{N}}}
+\newcommand{\Z}{\ensuremath{\mathbf{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbf{Q}}}
+\newcommand{\R}{\ensuremath{\mathbf{R}}}
+\newcommand{\C}{\ensuremath{\mathbf{C}}}
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing % Use with the ``setspace'' package
 %\onehalfspacing % Use with the ``setspace'' package
