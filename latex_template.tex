@@ -14,6 +14,18 @@
 \usepackage{mathrsfs} % Example: \mathscr{A}
 %\usepackage{amsthm} % Enable this and thmtools to get theorem-like environments
 %\usepackage{thmtools}
+% Note: ``qed=...'' only works with TeXLive2011 or newer (I think). For older distributions, just remove ``qed=...''.
+%\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]{axiom}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{corollary}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{definition}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{discussion}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{example}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{exercise}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{lemma}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{note}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{proposition}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{remark}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{theorem}
 %\usepackage{siunitx} % For units
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
@@ -44,7 +56,7 @@
 %\usepackage[charter]{mathdesign}
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
-%\usepackage{hyperref} % Must be last package, except for ellipsis. Known to cause problems with theorem-like environments.
+%\usepackage{hyperref} % Must be last package, except for ellipsis
 \usepackage{cleveref} % Must be after hyperref
 \usepackage{ellipsis}
 %%%%%%%%%%%%%%%%%%%% Document information
@@ -56,18 +68,6 @@
 \newcommand{\term}[1]{\textbf{#1}}
 %\newcommand{\url}[1]{\texttt{#1}} % Note: incompatible with hyperref
 %%%%%%%%%%%%%%%%%%%% For maths
-% Note: ``qed=...'' only works with TeXLive2011 or newer (I think). For older distributions, just remove ``qed=...''.
-%\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]{axiom}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{corollary}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{definition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{discussion}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{example}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{exercise}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{lemma}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{note}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{proposition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{remark}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{theorem}
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
 %\crefname{definition}{definition}{definitions}
