@@ -1,32 +1,52 @@
 \RequirePackage[l2tabu,orthodox]{nag}
-\documentclass[12pt,letterpaper]{article} % Add ``,titlepage'' after ``letterpaper'' to get a separate page for the title information
+\documentclass[12pt,letterpaper]{article}%
+    % Add ``,titlepage'' after ``letterpaper'' to get a separate page
+    % for the title information
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage[margin=1in]{geometry} % Use 1 inch margins (all around)
-%\usepackage{setspace} % For double spacing, etc.
-%\usepackage[parfill]{parskip} % New paragraphs get an empty line rather than an indent
-%\usepackage{soul} % Use \ul{text} to underline text
+%\usepackage[margin=1in]{geometry}%
+    % Use 1 inch margins (all around)
+%\usepackage{setspace}%
+    % For double spacing, etc.
+%\usepackage[parfill]{parskip}%
+    % New paragraphs get an empty line rather than an indent
+%\usepackage{soul}%
+    % Use \ul{text} to underline text
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{mathrsfs} % Example: \mathscr{A}
-%\usepackage{amsthm} % Enable this and thmtools to get theorem-like environments
+\usepackage{mathrsfs}%
+    % Example: \mathscr{A}
+%\usepackage{amsthm}%
+    % Enable this and thmtools to get theorem-like environments
 %\usepackage{thmtools}
-% Note: ``qed=...'' only works with TeXLive2011 or newer (I think). For older distributions, just remove ``qed=...''.
-% Also, theorem declarations must come before ``hyperref''.
-%\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]{axiom}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{corollary}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{definition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{discussion}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{example}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{exercise}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{lemma}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{note}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{proposition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{remark}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]{theorem}
+    % Note: ``qed=...'' only works with TeXLive2011 or newer (I think).
+    % For older distributions, just remove ``qed=...''. Also, theorem
+    % declarations must come before ``hyperref''.
+%\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]%
+    %{axiom}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{corollary}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{definition}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{discussion}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{example}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{exercise}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{lemma}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{note}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{proposition}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{remark}
+%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
+    %{theorem}
 %\usepackage{siunitx} % For units
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
@@ -37,18 +57,34 @@
 \usepackage{verbatim}
 \usepackage{subfig}
 \usepackage{graphicx}
-%\usepackage{textcomp} % To obtain straight single (') and double (") quotes (instead of curly ones); use \textquotesingle and \textquotedbl
-% Note however that \textquotedbl comes from the fontenc package
-%\usepackage{listings} % For displaying source code; for example use \begin{lstlisting}[language=tex]code here\end{lstlisting} to show LaTeX code
-%\lstset{upquote=true} % Don't make quotes curly when displaying code using the listings package
-%\usepackage[tone]{tipa} % For the International Phonetic Alphabet. Type \textipa{text} to typeset
+%\usepackage{textcomp}%
+    % To obtain straight single (') and double (") quotes (instead of
+    % curly ones); use ``\textquotesingle'' and ``\textquotedbl''.
+    % Note however that \textquotedbl comes from the fontenc package
+%%%%%%%%%%%%%%%%%%%% Displaying source code
+%\usepackage{listings}%
+    % For displaying source code. Use
+    % ``\lstinline[language=tex]!code here!'' to display (TeX) code
+    % within a paragraph. Use
+    % ``\begin{lstlisting}[language=tex]code here\end{lstlisting}'' to
+    % show (TeX) code as its own paragraph. Use
+    % ``\lstinputlisting[language=tex]{file.tex}'' to display (TeX)
+    % code from a separate file.
+%\lstset{upquote=true}%
+    % Don't make quotes curly when displaying code using the listings
+    % package
+%\usepackage[tone]{tipa}%
+    % For the International Phonetic Alphabet. Type \textipa{text} to
+    % typeset
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
 %\usetikzlibrary{snakes}
 %%%%%%%%%%%%%%%%%%%% Fonts
-% Some fonts with (at least partial) maths support
-\usepackage{lmodern} % Computer Modern, but apparently enhanced
-%\usepackage{mathptmx} % Times New Roman
+    % Some fonts with (at least partial) maths support
+\usepackage{lmodern}%
+    % Computer Modern, but apparently enhanced
+%\usepackage{mathptmx}%
+    % Times New Roman
 %\usepackage{fouriernc}
 %\usepackage{mathpazo}
 %\usepackage{bookman}
@@ -57,17 +93,22 @@
 %\usepackage[charter]{mathdesign}
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
-%\usepackage{hyperref} % Must be last package, except for ellipsis
-\usepackage{cleveref} % Must be after hyperref
+%\usepackage{hyperref}%
+    % Must be last package, except for ``ellipsis'' and ``cleveref''
+\usepackage{cleveref}%
+    % Must be after ``hyperref''
 \usepackage{ellipsis}
+    % Must be after ``hyperref'' (and probably ``cleveref'')
 %%%%%%%%%%%%%%%%%%%% Document information
 %\title{TitleOfDocument}
 %\author{AuthorOfDocument}
-%\date{\today{}} % Uncomment and leave this empty to have no date
+%\date{\today{}}%
+    % Uncomment and leave this empty to have no date
 %%%%%%%%%%%%%%%%%%%% Custom commands
-\newcommand{\strong}[1]{\textbf{#1}} % See the Wikipedia article on ``Separation of concerns'' and ``Separation of presentation and content''
-\newcommand{\term}[1]{\textbf{#1}}
-%\newcommand{\url}[1]{\texttt{#1}} % Note: incompatible with hyperref
+\newcommand{\definiendum}[1]{\textbf{#1}}%
+    % Example: ``A \definiendum{group} is a ...''.
+    % Also see the Wikipedia articles ``Separation of concerns'' and
+    % ``Separation of presentation and content''
 %%%%%%%%%%%%%%%%%%%% For maths
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
@@ -80,15 +121,17 @@
 %\crefname{proposition}{proposition}{propositions}
 %\crefname{remark}{remark}{remarks}
 %\crefname{theorem}{theorem}{theorems}
-% Abbreviations for sets of numbers
+    % Abbreviations for sets of numbers
 %\newcommand{\N}{\ensuremath{\mathbf{N}}}
 %\newcommand{\Z}{\ensuremath{\mathbf{Z}}}
 %\newcommand{\Q}{\ensuremath{\mathbf{Q}}}
 %\newcommand{\R}{\ensuremath{\mathbf{R}}}
 %\newcommand{\C}{\ensuremath{\mathbf{C}}}
 %%%%%%%%%%%%%%%%%%%% Other options
-%\doublespacing % Use with the ``setspace'' package
-%\onehalfspacing % Use with the ``setspace'' package
+%\doublespacing%
+    % Use with the ``setspace'' package
+%\onehalfspacing
+    % Use with the ``setspace'' package
 %%%%%%%%%%%%%%%%%%%% Begin document
 \begin{document}
 %\maketitle
@@ -99,4 +142,3 @@
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%% End document
-
