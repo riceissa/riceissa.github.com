@@ -1,26 +1,27 @@
 \RequirePackage[l2tabu,orthodox]{nag}
 \documentclass[12pt,letterpaper]{article}%
     % Add ``,titlepage'' after ``letterpaper'' to get a separate page
-    % for the title information
+    % for the title information.
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 %\usepackage[margin=1in]{geometry}%
-    % Use 1 inch margins (all around)
+    % Use 1 inch margins (all around).
 %\usepackage{setspace}%
-    % For double spacing, etc.
+    % For double spacing, etc. See ``\doublespacing'' and
+    % ``\onehalfspacing'' below.
 %\usepackage[parfill]{parskip}%
-    % New paragraphs get an empty line rather than an indent
+    % New paragraphs get an empty line rather than an indent.
 %\usepackage{soul}%
-    % Use \ul{text} to underline text
+    % Use ``\ul{text}'' to underline text.
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}%
-    % Example: \mathscr{A}
+    % Example: ``\mathscr{A}''.
 %\usepackage{amsthm}%
-    % Enable this and thmtools to get theorem-like environments
+    % Enable this and ``thmtools'' to get theorem-like environments.
 %\usepackage{thmtools}
     % Note: ``qed=...'' only works with TeXLive2011 or newer (I think).
     % For older distributions, just remove ``qed=...''. Also, theorem
@@ -47,7 +48,8 @@
     %{remark}
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
     %{theorem}
-%\usepackage{siunitx} % For units
+%\usepackage{siunitx}%
+    % For units.
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
 \usepackage{booktabs}
@@ -60,7 +62,8 @@
 %\usepackage{textcomp}%
     % To obtain straight single (') and double (") quotes (instead of
     % curly ones); use ``\textquotesingle'' and ``\textquotedbl''.
-    % Note however that \textquotedbl comes from the fontenc package
+    % Note however that ``\textquotedbl'' comes from the fontenc
+    % package.
 %%%%%%%%%%%%%%%%%%%% Displaying source code
 %\usepackage{listings}%
     % For displaying source code. Use
@@ -69,22 +72,22 @@
     % ``\begin{lstlisting}[language=tex]code here\end{lstlisting}'' to
     % show (TeX) code as its own paragraph. Use
     % ``\lstinputlisting[language=tex]{file.tex}'' to display (TeX)
-    % code from a separate file.
+    % code from a separate file (``file.tex'').
 %\lstset{upquote=true}%
     % Don't make quotes curly when displaying code using the listings
-    % package
+    % package.
 %\usepackage[tone]{tipa}%
-    % For the International Phonetic Alphabet. Type \textipa{text} to
-    % typeset
+    % For the International Phonetic Alphabet. Example:
+    % ``\textipa{text}''.
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
 %\usetikzlibrary{snakes}
 %%%%%%%%%%%%%%%%%%%% Fonts
-    % Some fonts with (at least partial) maths support
+    % Some fonts with (at least partial) maths support.
 \usepackage{lmodern}%
-    % Computer Modern, but apparently enhanced
+    % Computer Modern, but apparently enhanced.
 %\usepackage{mathptmx}%
-    % Times New Roman
+    % Times New Roman.
 %\usepackage{fouriernc}
 %\usepackage{mathpazo}
 %\usepackage{bookman}
@@ -94,21 +97,21 @@
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
 %\usepackage{hyperref}%
-    % Must be last package, except for ``ellipsis'' and ``cleveref''
+    % Must be last package, except for ``ellipsis'' and ``cleveref''.
 \usepackage{cleveref}%
-    % Must be after ``hyperref''
+    % Must be after ``hyperref''.
 \usepackage{ellipsis}
-    % Must be after ``hyperref'' (and probably ``cleveref'')
+    % Must be after ``hyperref'' (and probably ``cleveref'').
 %%%%%%%%%%%%%%%%%%%% Document information
 %\title{TitleOfDocument}
 %\author{AuthorOfDocument}
 %\date{\today{}}%
-    % Uncomment and leave this empty to have no date
+    % Uncomment and leave this empty to have no date.
 %%%%%%%%%%%%%%%%%%%% Custom commands
 \newcommand{\definiendum}[1]{\textbf{#1}}%
     % Example: ``A \definiendum{group} is a ...''.
     % Also see the Wikipedia articles ``Separation of concerns'' and
-    % ``Separation of presentation and content''
+    % ``Separation of presentation and content''.
 %%%%%%%%%%%%%%%%%%%% For maths
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
@@ -121,7 +124,7 @@
 %\crefname{proposition}{proposition}{propositions}
 %\crefname{remark}{remark}{remarks}
 %\crefname{theorem}{theorem}{theorems}
-    % Abbreviations for sets of numbers
+    % Abbreviations for sets of numbers.
 %\newcommand{\N}{\ensuremath{\mathbf{N}}}
 %\newcommand{\Z}{\ensuremath{\mathbf{Z}}}
 %\newcommand{\Q}{\ensuremath{\mathbf{Q}}}
@@ -129,9 +132,9 @@
 %\newcommand{\C}{\ensuremath{\mathbf{C}}}
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing%
-    % Use with the ``setspace'' package
+    % Use with the ``setspace'' package.
 %\onehalfspacing
-    % Use with the ``setspace'' package
+    % Use with the ``setspace'' package.
 %%%%%%%%%%%%%%%%%%%% Begin document
 \begin{document}
 %\maketitle
