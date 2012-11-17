@@ -125,6 +125,11 @@
     % Example: ``A \definiendum{group} is a ...''.
     % Also see the Wikipedia articles ``Separation of concerns'' and
     % ``Separation of presentation and content''.
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}%
+    % To enable line breaks within a table cell.
+    % See  http://tex.stackexchange.com/a/19678/18026  for more
+    % information.
 %%%%%%%%%%%%%%%%%%%% For maths
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
