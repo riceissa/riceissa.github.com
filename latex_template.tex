@@ -53,7 +53,7 @@
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
     %{theorem}
 %\usepackage{siunitx}%
-    % For units.
+    % For units. Use for example ``\SI{12.345}{\gram}''.
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
 \usepackage{booktabs}
@@ -63,6 +63,12 @@
 \usepackage{verbatim}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage{float}
+    % Use for example ``\begin{figure}[H] ... \end{figure}'' to place a
+    % figure exactly where it appears in the source.
+\usepackage{enumitem}
+    % Use for example ``\begin{itemize}[noitemsep] ... \end{itemize}''
+    % to disable the space between items.
 %\usepackage{textcomp}%
     % To obtain straight single (') and double (") quotes (instead of
     % curly ones); use ``\textquotesingle'' and ``\textquotedbl''.
