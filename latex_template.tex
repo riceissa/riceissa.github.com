@@ -1,35 +1,31 @@
 \RequirePackage[l2tabu,orthodox]{nag}
 \documentclass[12pt,letterpaper]{article}%
-    % Add ``,titlepage'' after ``letterpaper'' to get a separate page
+    % Add `,titlepage` after `letterpaper` to get a separate page
     % for the title information.
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-%\usepackage{xeCJK}
-%\setCJKmainfont{IPAexMincho}
-    % Be sure to use XeLaTeX to compile. Since the ``microtype'' package
-    % only works with pdflatex, make sure to disable that too.
 %\usepackage[margin=1in]{geometry}%
     % Use 1 inch margins (all around).
 %\usepackage{setspace}%
-    % For double spacing, etc. See ``\doublespacing'' and
-    % ``\onehalfspacing'' below.
+    % For double spacing, etc. See `\doublespacing` and
+    % `\onehalfspacing` below.
 %\usepackage[parfill]{parskip}%
     % New paragraphs get an empty line rather than an indent.
 %\usepackage{soul}%
-    % Use ``\ul{text}'' to underline text.
+    % Use `\ul{text}` to underline text.
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}%
-    % Example: ``\mathscr{A}''.
+    % Example: `\mathscr{A}`.
 %\usepackage{amsthm}%
-    % Enable this and ``thmtools'' to get theorem-like environments.
+    % Enable this and `thmtools` to get theorem-like environments.
 %\usepackage{thmtools}
-    % Note: ``qed=...'' only works with TeXLive2011 or newer (I think).
-    % For older distributions, just remove ``qed=...''. Also, theorem
-    % declarations must come before ``hyperref''.
+    % Note: `qed=...` only works with TeXLive2011 or newer (I think).
+    % For older distributions, just remove `qed=...`.  Also, theorem
+    % declarations must come before `hyperref`.
 %\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]%
     %{axiom}
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
@@ -53,7 +49,7 @@
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
     %{theorem}
 %\usepackage{siunitx}%
-    % For units. Use for example ``\SI{12.345}{\gram}''.
+    % For units.  Use for example `\SI{12.345}{\gram}`.
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
 \usepackage{booktabs}
@@ -64,25 +60,24 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{float}
-    % Use for example ``\begin{figure}[H] ... \end{figure}'' to place a
+    % Use for example `\begin{figure}[H] ... \end{figure}` to place a
     % figure exactly where it appears in the source.
 \usepackage{enumitem}
-    % Use for example ``\begin{itemize}[noitemsep] ... \end{itemize}''
+    % Use for example `\begin{itemize}[noitemsep] ... \end{itemize}`
     % to disable the space between items.
 %\usepackage{textcomp}%
     % To obtain straight single (') and double (") quotes (instead of
-    % curly ones); use ``\textquotesingle'' and ``\textquotedbl''.
-    % Note however that ``\textquotedbl'' comes from the fontenc
-    % package.
+    % curly ones); use `\textquotesingle` and `\textquotedbl`.  Note
+    % however that `\textquotedbl` comes from the `fontenc` package.
 %%%%%%%%%%%%%%%%%%%% Displaying source code
 %\usepackage{listings}%
-    % For displaying source code. Use
-    % ``\lstinline[language=tex]!code here!'' to display (TeX) code
-    % within a paragraph. Use
-    % ``\begin{lstlisting}[language=tex]code here\end{lstlisting}'' to
-    % show (TeX) code as its own paragraph. Use
-    % ``\lstinputlisting[language=tex]{file.tex}'' to display (TeX)
-    % code from a separate file (``file.tex'').
+    % For displaying source code.  Use
+    % `\lstinline[language=tex]!code here!`
+    % to display (TeX) code within a paragraph.  Use
+    % `\begin{lstlisting}[language=tex]code here\end{lstlisting}` to
+    % show (TeX) code as its own paragraph.  Use
+    % `\lstinputlisting[language=tex]{file.tex}` to display (TeX) code
+    % from a separate file (`file.tex`).
 %\lstset%
 %{%
     %basicstyle=\ttfamily,%
@@ -97,7 +92,7 @@
 %}%
 %\usepackage[tone]{tipa}%
     % For the International Phonetic Alphabet. Example:
-    % ``\textipa{text}''.
+    % `\textipa{text}`.
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
 %\usetikzlibrary{snakes}
@@ -113,14 +108,34 @@
 %\usepackage{pxfonts}
 %\usepackage[utopia]{mathdesign}
 %\usepackage[charter]{mathdesign}
+%%%%% Begin Japanese Setup
+    % Be sure to use XeLaTeX to compile.  Since the `microtype` package
+    % only works with `pdflatex`, make sure to disable that too.
+%\usepackage{xeCJK}
+    %\setCJKmainfont{IPAexMincho}
+    %\setCJKsansfont{IPAexGothic}
+        % These fonts are available on Ubuntu and Debian.  Install the
+        % package `fonts-ipafont`.
+    %\xeCJKsetup{CJKmath=true,AutoFakeBold=true,AutoFakeSlant=true}
+        % `CJKmath=true` allows CJK characters to appear in mathematical
+        % formulas.  `AutoFakeBold=true` and `AutoFakeSlant=true` will
+        % fake bold and slant styles for you (the IPA font does not come
+        % with these styles).  Running `texdoc xecjk` on the command
+        % line will display the documentation (which happens to only be
+        % available in Chinese).
+%\usepackage[overlap,CJK]{ruby}
+    %\renewcommand{\rubysize}{0.5}
+    %\renewcommand{\rubysep}{-0.3ex}
+        % For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
+%%%%% End Japanese Setup
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
 %\usepackage{hyperref}%
-    % Must be last package, except for ``ellipsis'' and ``cleveref''.
+    % Must be last package, except for `ellipsis` and `cleveref`.
 \usepackage{cleveref}%
-    % Must be after ``hyperref''.
+    % Must be after `hyperref`.
 \usepackage{ellipsis}
-    % Must be after ``hyperref'' (and probably ``cleveref'').
+    % Must be after `hyperref` (and probably `cleveref`).
 %%%%%%%%%%%%%%%%%%%% Document information
 %\title{TitleOfDocument}
 %\author{AuthorOfDocument}
@@ -128,14 +143,13 @@
     % Uncomment and leave this empty to have no date.
 %%%%%%%%%%%%%%%%%%%% Custom commands
 \newcommand{\definiendum}[1]{\textbf{#1}}%
-    % Example: ``A \definiendum{group} is a ...''.
-    % Also see the Wikipedia articles ``Separation of concerns'' and
-    % ``Separation of presentation and content''.
-\newcommand{\specialcell}[2][c]{%
+    % Example: "A \definiendum{group} is a ...".
+    % Also see the Wikipedia articles "Separation of concerns" and
+    % "Separation of presentation and content".
+\newcommand{\scell}[2][c]{%
     \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}%
-    % To enable line breaks within a table cell.
-    % See  http://tex.stackexchange.com/a/19678/18026  for more
-    % information.
+    % To enable line breaks within a table cell.  See
+    % http://tex.stackexchange.com/a/19678/18026 for more information.
 %%%%%%%%%%%%%%%%%%%% For maths
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
@@ -156,9 +170,9 @@
 %\newcommand{\C}{\ensuremath{\mathbf{C}}}
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing%
-    % Use with the ``setspace'' package.
+    % Use with the `setspace` package.
 %\onehalfspacing
-    % Use with the ``setspace'' package.
+    % Use with the `setspace` package.
 %%%%%%%%%%%%%%%%%%%% Begin document
 \begin{document}
 %\maketitle
