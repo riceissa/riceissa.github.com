@@ -128,6 +128,21 @@
     %\renewcommand{\rubysep}{-0.3ex}
         % For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
 %%%%% End Japanese Setup
+%%%%% Begin Alternative Japanese Setup
+    % Make sure that `platex` or something similar is installed.
+    % `platex` must be used when compiling instead of `latex` or
+    % `xelatex`.  For `documentclass`, use:
+        %\documentclass[mingoth]{jsarticle}
+    % Then in the preamble add the line:
+        %\usepackage{otf}
+    % When compiling, use the command (on the command line):
+        %`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
+    % Here, the `.map` file is used to "map" the (default, on my
+    % machine) gothic font (sans-serif) to become the mincho font
+    % (serif).  If the `.map` file is not located in the same place, use
+    % `locate filename`.
+
+%%%%% End Alternative Japanese Setup
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
 %\usepackage{hyperref}%
