@@ -1,31 +1,31 @@
 \RequirePackage[l2tabu,orthodox]{nag}
 \documentclass[12pt,letterpaper]{article}%
-    % Add `,titlepage` after `letterpaper` to get a separate page
-    % for the title information.
+    %% Add `,titlepage` after `letterpaper` to get a separate page
+    %% for the title information.
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 %\usepackage[margin=1in]{geometry}%
-    % Use 1 inch margins (all around).
+    %% Use 1 inch margins (all around).
 %\usepackage{setspace}%
-    % For double spacing, etc. See `\doublespacing` and
-    % `\onehalfspacing` below.
+    %% For double spacing, etc. See `\doublespacing` and
+    %% `\onehalfspacing` below.
 %\usepackage[parfill]{parskip}%
-    % New paragraphs get an empty line rather than an indent.
+    %% New paragraphs get an empty line rather than an indent.
 %\usepackage{soul}%
-    % Use `\ul{text}` to underline text.
+    %% Use `\ul{text}` to underline text.
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}%
-    % Example: `\mathscr{A}`.
+    %% Example: `\mathscr{A}`.
 %\usepackage{amsthm}%
-    % Enable this and `thmtools` to get theorem-like environments.
+    %% Enable this and `thmtools` to get theorem-like environments.
 %\usepackage{thmtools}
-    % Note: `qed=...` only works with TeXLive2011 or newer (I think).
-    % For older distributions, just remove `qed=...`.  Also, theorem
-    % declarations must come before `hyperref`.
+    %% Note: `qed=...` only works with TeXLive2011 or newer (I think).
+    %% For older distributions, just remove `qed=...`.  Also, theorem
+    %% declarations must come before `hyperref`.
 %\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]%
     %{axiom}
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
@@ -48,8 +48,55 @@
     %{remark}
 %\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
     %{theorem}
+%% Alternatives for Japanese:
+    %\declaretheorem[name=公理,style=definition,qed=\(\lrcorner\),%
+        %parent=subsection]%
+        %{axiom}
+    %\declaretheorem[name=系,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{corollary}
+    %\declaretheorem[name=定義,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{definition}
+    %\declaretheorem[name=論考,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{discussion}
+    %\declaretheorem[name=例,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{example}
+    %\declaretheorem[name=練習問題,style=definition,qed=\(\lrcorner\),%
+        %% 英語でcalibrationと言ってみても面白い。
+        %% 日本語では「機械調整」かな？
+        %% 英語のproblemとは「問題」であるが，
+        %% これはまだ解かれていない問題専用にしたい。
+        %% 誰もが解く問題は「練習」，「演習」，「問（い）」などが
+        %% より良い。
+        %% 英：exercise, practice など。
+        %sibling=axiom]%
+        %{exercise}
+    %\declaretheorem[name=補題,style=definition,qed=\(\lrcorner\),%
+            %% 補助定理も可。
+        %sibling=axiom]%
+        %{lemma}
+    %\declaretheorem[name=メモ,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{note}
+    %\declaretheorem[name=命題,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{proposition}
+    %\declaretheorem[name=発言,style=definition,qed=\(\lrcorner\),%
+        %% ある講義ノートでは「注意」が使われている。
+        %% が，微妙にニュアンスが違う。
+        %sibling=axiom]%
+        %{remark}
+    %\declaretheorem[name=定理,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{theorem}
+    %\declaretheorem[name=証明,style=definition,qed=\(\square\),%
+        %numbered=no]%
+        %{jproof}
 %\usepackage{siunitx}%
-    % For units.  Use for example `\SI{12.345}{\gram}`.
+    %% For units.  Use for example `\SI{12.345}{\gram}`.
 \usepackage[all,error]{onlyamsmath}
 \usepackage{fixltx2e}
 \usepackage{booktabs}
@@ -60,24 +107,24 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{float}
-    % Use for example `\begin{figure}[H] ... \end{figure}` to place a
-    % figure exactly where it appears in the source.
+    %% Use for example `\begin{figure}[H] ... \end{figure}` to place a
+    %% figure exactly where it appears in the source.
 \usepackage{enumitem}
-    % Use for example `\begin{itemize}[noitemsep] ... \end{itemize}`
-    % to disable the space between items.
+    %% Use for example `\begin{itemize}[noitemsep] ... \end{itemize}`
+    %% to disable the space between items.
 %\usepackage{textcomp}%
-    % To obtain straight single (') and double (") quotes (instead of
-    % curly ones); use `\textquotesingle` and `\textquotedbl`.  Note
-    % however that `\textquotedbl` comes from the `fontenc` package.
+    %% To obtain straight single (') and double (") quotes (instead of
+    %% curly ones); use `\textquotesingle` and `\textquotedbl`.  Note
+    %% however that `\textquotedbl` comes from the `fontenc` package.
 %%%%%%%%%%%%%%%%%%%% Displaying source code
 %\usepackage{listings}%
-    % For displaying source code.  Use
-    % `\lstinline[language=tex]!code here!`
-    % to display (TeX) code within a paragraph.  Use
-    % `\begin{lstlisting}[language=tex]code here\end{lstlisting}` to
-    % show (TeX) code as its own paragraph.  Use
-    % `\lstinputlisting[language=tex]{file.tex}` to display (TeX) code
-    % from a separate file (`file.tex`).
+    %% For displaying source code.  Use
+    %% `\lstinline[language=tex]!code here!`
+    %% to display (TeX) code within a paragraph.  Use
+    %% `\begin{lstlisting}[language=tex]code here\end{lstlisting}` to
+    %% show (TeX) code as its own paragraph.  Use
+    %% `\lstinputlisting[language=tex]{file.tex}` to display (TeX) code
+    %% from a separate file (`file.tex`).
 %\lstset%
 %{%
     %basicstyle=\ttfamily,%
@@ -87,21 +134,21 @@
     %showspaces=false,%
     %showstringspaces=false,%
     %upquote=true,%
-        % Don't make quotes curly.
+        %% Don't make quotes curly.
     %numbers=left%
 %}%
 %\usepackage[tone]{tipa}%
-    % For the International Phonetic Alphabet. Example:
-    % `\textipa{text}`.
+    %% For the International Phonetic Alphabet. Example:
+    %% `\textipa{text}`.
 %\usepackage{tikz}
 %\usetikzlibrary{decorations.markings}
 %\usetikzlibrary{snakes}
 %%%%%%%%%%%%%%%%%%%% Fonts
-    % Some fonts with (at least partial) maths support.
+    %% Some fonts with (at least partial) maths support.
 \usepackage{lmodern}%
-    % Computer Modern, but apparently enhanced.
+    %% Computer Modern, but apparently enhanced.
 %\usepackage{mathptmx}%
-    % Times New Roman.
+    %% Times New Roman.
 %\usepackage{fouriernc}
 %\usepackage{mathpazo}
 %\usepackage{bookman}
@@ -109,69 +156,69 @@
 %\usepackage[utopia]{mathdesign}
 %\usepackage[charter]{mathdesign}
 %%%%% Begin Japanese Setup
-    % Be sure to use XeLaTeX to compile.  Since the `microtype` package
-    % only works with `pdflatex`, make sure to disable that too.
+    %% Be sure to use XeLaTeX to compile.  Since the `microtype` package
+    %% only works with `pdflatex`, make sure to disable that too.
 %\usepackage{xeCJK}
     %\setCJKmainfont{IPAexMincho}
     %\setCJKsansfont{IPAexGothic}
-        % These fonts are available on Ubuntu and Debian.  Install the
-        % package `fonts-ipafont`.
+        %% These fonts are available on Ubuntu and Debian.  Install the
+        %% package `fonts-ipafont`.
     %\xeCJKsetup{CJKmath=true,AutoFakeBold=true,AutoFakeSlant=true}
-        % `CJKmath=true` allows CJK characters to appear in mathematical
-        % formulas.  `AutoFakeBold=true` and `AutoFakeSlant=true` will
-        % fake bold and slant styles for you (the IPA font does not come
-        % with these styles).  Running `texdoc xecjk` on the command
-        % line will display the documentation (which happens to only be
-        % available in Chinese).
+        %% `CJKmath=true` allows CJK characters to appear in mathematical
+        %% formulas.  `AutoFakeBold=true` and `AutoFakeSlant=true` will
+        %% fake bold and slant styles for you (the IPA font does not come
+        %% with these styles).  Running `texdoc xecjk` on the command
+        %% line will display the documentation (which happens to only be
+        %% available in Chinese).
 %\usepackage[overlap,CJK]{ruby}
     %\renewcommand{\rubysize}{0.5}
     %\renewcommand{\rubysep}{-0.3ex}
-        % For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
+        %% For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
 %%%%% End Japanese Setup
 %%%%% Begin Alternative Japanese Setup
-    % Make sure that `platex` or something similar is installed.
-    % `platex` must be used when compiling instead of `latex` or
-    % `xelatex`.  For `documentclass`, use:
+    %% Make sure that `platex` or something similar is installed.
+    %% `platex` must be used when compiling instead of `latex` or
+    %% `xelatex`.  For `documentclass`, use:
         %\documentclass[mingoth]{jsarticle}
-    % Then in the preamble add the line:
+    %% Then in the preamble add the line:
         %\usepackage{otf}
-    % When compiling, use the command (on the command line):
-        %`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
-    % Here, the `.map` file is used to "map" the (default, on my
-    % machine) gothic font (sans-serif) to become the mincho font
-    % (serif).  If the `.map` file is not located in the same place, use
-    % `locate filename`.
-    %
-    % Add `\usepackage{okumacro}` to the preamble for useful features
-    % such as `\ruby{}{}` for furigana and `\kenten{}` for dots above
-    % characters for emphasis.
-    %
-    % For the Japanese double-width dash, use the following:
-        %\newcommand{\jdash}{―\hspace{-0.02cm}―}
-        %\newcommand{\jell}{⋯\penalty10000⋯}
+    %% When compiling, use the command (on the command line):
+        %%`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
+    %% Here, the `.map` file is used to "map" the (default, on my
+    %% machine) gothic font (sans-serif) to become the mincho font
+    %% (serif).  If the `.map` file is not located in the same place, use
+    %% `locate filename`.
+    %%
+    %% Add `\usepackage{okumacro}` to the preamble for useful features
+    %% such as `\ruby{}{}` for furigana and `\kenten{}` for dots above
+    %% characters for emphasis.
+    %%
+    %% For the Japanese double-width dash, use the following:
+        %%\newcommand{\jdash}{―\hspace{-0.02cm}―}
+        %%\newcommand{\jell}{⋯\penalty10000⋯}
 %%%%% End Alternative Japanese Setup
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
 %\usepackage{hyperref}%
-    % Must be last package, except for `ellipsis` and `cleveref`.
+    %% Must be last package, except for `ellipsis` and `cleveref`.
 \usepackage{cleveref}%
-    % Must be after `hyperref`.
+    %% Must be after `hyperref`.
 \usepackage{ellipsis}
-    % Must be after `hyperref` (and probably `cleveref`).
+    %% Must be after `hyperref` (and probably `cleveref`).
 %%%%%%%%%%%%%%%%%%%% Document information
 %\title{TitleOfDocument}
 %\author{AuthorOfDocument}
 %\date{\today{}}%
-    % Uncomment and leave this empty to have no date.
+    %% Uncomment and leave this empty to have no date.
 %%%%%%%%%%%%%%%%%%%% Custom commands
 \newcommand{\definiendum}[1]{\textbf{#1}}%
-    % Example: "A \definiendum{group} is a ...".
-    % Also see the Wikipedia articles "Separation of concerns" and
-    % "Separation of presentation and content".
+    %% Example: "A \definiendum{group} is a ...".
+    %% Also see the Wikipedia articles "Separation of concerns" and
+    %% "Separation of presentation and content".
 \newcommand{\scell}[2][c]{%
     \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}%
-    % To enable line breaks within a table cell.  See
-    % http://tex.stackexchange.com/a/19678/18026 for more information.
+    %% To enable line breaks within a table cell.  See
+    %% http://tex.stackexchange.com/a/19678/18026 for more information.
 \newcommand{\schoolheader}[4]{\noindent #1\hfill #2
 
 \hfill #3
@@ -191,7 +238,7 @@
 %\crefname{proposition}{proposition}{propositions}
 %\crefname{remark}{remark}{remarks}
 %\crefname{theorem}{theorem}{theorems}
-    % Abbreviations for sets of numbers.
+    %% Abbreviations for sets of numbers.
 %\newcommand{\N}{\ensuremath{\mathbf{N}}}
 %\newcommand{\Z}{\ensuremath{\mathbf{Z}}}
 %\newcommand{\Q}{\ensuremath{\mathbf{Q}}}
@@ -199,9 +246,9 @@
 %\newcommand{\C}{\ensuremath{\mathbf{C}}}
 %%%%%%%%%%%%%%%%%%%% Other options
 %\doublespacing%
-    % Use with the `setspace` package.
+    %% Use with the `setspace` package.
 %\onehalfspacing
-    % Use with the `setspace` package.
+    %% Use with the `setspace` package.
 %%%%%%%%%%%%%%%%%%%% Begin document
 \begin{document}
 %\maketitle
