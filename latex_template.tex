@@ -156,6 +156,29 @@
 %\usepackage[utopia]{mathdesign}
 %\usepackage[charter]{mathdesign}
 %%%%% Begin Japanese Setup
+    %% Make sure that `platex` or something similar is installed.
+    %% `platex` must be used when compiling instead of `latex` or
+    %% `xelatex`.  For `documentclass`, use:
+        %\documentclass[mingoth]{jsarticle}
+    %% Then in the preamble add the line:
+        %\usepackage{otf}
+    %% When compiling, use the command (on the command line):
+        %%`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
+    %% Here, the `.map` file is used to "map" the (default, on my
+    %% machine) gothic font (sans-serif) to become the mincho font
+    %% (serif).  If the `.map` file is not located in the same place, use
+    %% `locate filename`.
+    %%     Add
+        %\usepackage{okumacro}
+    %% to the preamble for useful features such as `\ruby{漢字}{かんじ}`
+    %% for furigana and `\kenten{}` for dots above characters for
+    %% emphasis.
+    %%     For the Japanese double-width dash, use the following:
+        %\newcommand{\jdash}{―{\penalty10000}\hspace{-0.04cm}{\penalty10000}―}
+    %% For the Japanese double-width ellipses, use:
+        %\newcommand{\jell}{⋯\penalty10000⋯}
+%%%%% End Japanese Setup
+%%%%% Begin Alternative Japanese Setup
     %% Be sure to use XeLaTeX to compile.  Since the `microtype` package
     %% only works with `pdflatex`, make sure to disable that too.
 %\usepackage{xeCJK}
@@ -174,38 +197,20 @@
     %\renewcommand{\rubysize}{0.5}
     %\renewcommand{\rubysep}{-0.3ex}
         %% For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
-%%%%% End Japanese Setup
-%%%%% Begin Alternative Japanese Setup
-    %% Make sure that `platex` or something similar is installed.
-    %% `platex` must be used when compiling instead of `latex` or
-    %% `xelatex`.  For `documentclass`, use:
-        %\documentclass[mingoth]{jsarticle}
-    %% Then in the preamble add the line:
-        %\usepackage{otf}
-    %% When compiling, use the command (on the command line):
-        %%`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
-    %% Here, the `.map` file is used to "map" the (default, on my
-    %% machine) gothic font (sans-serif) to become the mincho font
-    %% (serif).  If the `.map` file is not located in the same place, use
-    %% `locate filename`.
-    %%
-    %% Add `\usepackage{okumacro}` to the preamble for useful features
-    %% such as `\ruby{}{}` for furigana and `\kenten{}` for dots above
-    %% characters for emphasis.
-    %%
-    %% For the Japanese double-width dash, use the following:
-        %%\newcommand{\jdash}{―\hspace{-0.02cm}―}
-        %%\newcommand{\jell}{⋯\penalty10000⋯}
 %%%%% End Alternative Japanese Setup
 %%%%%%%%%%%%%%%%%%%% Packages (continued)
 \usepackage{microtype}
 %\usepackage{hyperref}%
     %% Must be last package, except for `ellipsis` and `cleveref`.
+%\usepackage[dvipdfmx,setpagesize=false]{hyperref}
+    %% When compiling with `platex`.
 \usepackage{cleveref}%
     %% Must be after `hyperref`.
 \usepackage{ellipsis}
     %% Must be after `hyperref` (and probably `cleveref`).
 %%%%%%%%%%%%%%%%%%%% Document information
+    %% Remember to do a `\maketitle` later so that this information is
+    %% actually displayed in the resulting PDF.
 %\title{TitleOfDocument}
 %\author{AuthorOfDocument}
 %\date{\today{}}%
