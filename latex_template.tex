@@ -173,8 +173,10 @@
     %% to the preamble for useful features such as `\ruby{漢字}{かんじ}`
     %% for furigana and `\kenten{}` for dots above characters for
     %% emphasis.
-    %%     For the Japanese double-width dash, use the following:
-        %\newcommand{\jdash}{―{\penalty10000}\hspace{-0.04cm}{\penalty10000}―}
+    %%     For the Japanese double-width dash, use the following.  This
+    %% requires `okumacro`, but is hopefully easier than hunting
+    %% around for the right type of dash:
+        %\newcommand{\jdash}{\――}
     %% For the Japanese double-width ellipses, use:
         %\newcommand{\jell}{⋯\penalty10000⋯}
 %%%%% End Japanese Setup
