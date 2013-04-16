@@ -113,6 +113,13 @@
 \usepackage{enumitem}
     %% Use for example `\begin{itemize}[noitemsep] ... \end{itemize}`
     %% to disable the space between items.
+    %% Also useful for resuming a particular counter:
+    %%     \begin{enumerate}[resume]
+    %%         \item Text.
+    %%     \end{enumerate}
+    %% will reuse the last counter.  See
+    %% http://tex.stackexchange.com/questions/1669/resuming-a-list/1670#1670
+    %% for more.
 %\usepackage{textcomp}%
     %% To obtain straight single (') and double (") quotes (instead of
     %% curly ones); use `\textquotesingle` and `\textquotedbl`.  Note
