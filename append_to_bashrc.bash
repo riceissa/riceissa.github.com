@@ -12,7 +12,7 @@ alias {update,upgrade}='sudo aptitude update && sudo aptitude upgrade'
 
 # For git
 
-alias stat='git status'
+alias gstat='git status'
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
 
