@@ -16,4 +16,19 @@ alias gstat='git status'
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
 
+# Surfraw
+
+alias yjisho='surfraw duckduckgo -browser=elinks \!yjisho '
+alias jisho='surfraw duckduckgo -browser=elinks \!yjisho '
+alias j='surfraw duckduckgo -browser=elinks \!yjisho '
+
+alias duck='surfraw duckduckgo -browser=elinks '
+
+alias d='surfraw duckduckgo -browser=elinks \!d '
+alias define='surfraw duckduckgo -browser=elinks \!d '
+
+alias google='surfraw google -browser=elinks '
+alias goog='surfraw google -browser=elinks '
+alias g='surfraw google -browser=elinks '
+
 ### END append_to_bashrc.bash
