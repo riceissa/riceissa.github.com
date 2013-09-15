@@ -1,3 +1,56 @@
+% 同ディレクトリに含まれている筈の latex_template.tex の邦訳。
+%%%%% 始：日本語環境の設定
+    %% 　ここで説明する流儀では、TeX ファイルの処理のために、platex
+    %% というプログラムを使います。platex は似た名前の latex や xelatex
+    %% とは多少異なります。 platex がコンピュータにインストールされて
+    %% いるか、確認してください。
+    %% 　ファイルの始めの `documentclass` という部分は、次のように
+    %% 書きます：
+\documentclass[mingoth]{jsarticle}
+    %% 　プリアンブルには、次のようなパッケージを入れます：
+\usepackage{otf}
+    %% 　TeX のファイルを処理するには、次のコマンドを使用します。一旦 DVI
+    %% ファイルに処理してから、より都合のいい PDF ファイルに変換します。
+        %%`platex sourcefile.tex && dvipdfmx -f /usr/share/texlive/texmf-dist/fonts/map/dvipdfmx/jfontmaps/otf-ipaex.map sourcefile.dvi`
+    %% （上のコマンドは、Debian の環境で使用するためのものですが、
+    %% Ubuntu のような似た GNU/Linux の環境でしたら、殆ど変えないで
+    %% 使えます。）
+    %% Here, the `.map` file is used to "map" the (default, on my
+    %% machine) gothic font (sans-serif) to become the mincho font
+    %% (serif).  If the `.map` file is not located in the same place, use
+    %% `locate filename`.
+    %%     Add
+        %\usepackage{okumacro}
+    %% to the preamble for useful features such as `\ruby{漢字}{かんじ}`
+    %% for furigana and `\kenten{}` for dots above characters for
+    %% emphasis.
+    %%     For the Japanese double-width dash, use the following.  This
+    %% requires `okumacro`, but is hopefully easier than hunting
+    %% around for the right type of dash:
+        %\newcommand{\jdash}{\――}
+    %% For the Japanese double-width ellipses, use:
+        %\newcommand{\jell}{⋯\penalty10000⋯}
+%%%%% 終：日本語環境の設定
+%%%%% 始：別の日本語環境の設定
+    %% Be sure to use XeLaTeX to compile.  Since the `microtype` package
+    %% only works with `pdflatex`, make sure to disable that too.
+%\usepackage{xeCJK}
+    %\setCJKmainfont{IPAexMincho}
+    %\setCJKsansfont{IPAexGothic}
+        %% These fonts are available on Ubuntu and Debian.  Install the
+        %% package `fonts-ipafont`.
+    %\xeCJKsetup{CJKmath=true,AutoFakeBold=true,AutoFakeSlant=true}
+        %% `CJKmath=true` allows CJK characters to appear in mathematical
+        %% formulas.  `AutoFakeBold=true` and `AutoFakeSlant=true` will
+        %% fake bold and slant styles for you (the IPA font does not come
+        %% with these styles).  Running `texdoc xecjk` on the command
+        %% line will display the documentation (which happens to only be
+        %% available in Chinese).
+%\usepackage[overlap,CJK]{ruby}
+    %\renewcommand{\rubysize}{0.5}
+    %\renewcommand{\rubysep}{-0.3ex}
+        %% For ruby (furigana).  Use the syntax `\ruby{kanji}{furigana}`.
+%%%%% 終：別の日本語環境の設定
 \RequirePackage[l2tabu,orthodox]{nag}
 \documentclass[12pt,letterpaper]{article}%
     %% Add `,titlepage` after `letterpaper` to get a separate page
@@ -27,28 +80,53 @@
     %% Note: `qed=...` only works with TeXLive2011 or newer (I think).
     %% For older distributions, just remove `qed=...`.  Also, theorem
     %% declarations must come before `hyperref`.
-%\declaretheorem[style=definition,qed=\(\lrcorner\),parent=subsection]%
-    %{axiom}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{corollary}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{definition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{discussion}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{example}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{exercise}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{lemma}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{note}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{proposition}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{remark}
-%\declaretheorem[style=definition,qed=\(\lrcorner\),sibling=axiom]%
-    %{theorem}
+%% Alternatives for Japanese:
+    %\declaretheorem[name=公理,style=definition,qed=\(\lrcorner\),%
+        %parent=subsection]%
+        %{axiom}
+    %\declaretheorem[name=系,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{corollary}
+    %\declaretheorem[name=定義,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{definition}
+    %\declaretheorem[name=論考,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{discussion}
+    %\declaretheorem[name=例,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{example}
+    %\declaretheorem[name=練習問題,style=definition,qed=\(\lrcorner\),%
+        %% 英語でcalibrationと言ってみても面白い。
+        %% 日本語では「機械調整」かな？
+        %% 英語のproblemとは「問題」であるが，
+        %% これはまだ解かれていない問題専用にしたい。
+        %% 誰もが解く問題は「練習」，「演習」，「問（い）」などが
+        %% より良い。
+        %% 英：exercise, practice など。
+        %sibling=axiom]%
+        %{exercise}
+    %\declaretheorem[name=補題,style=definition,qed=\(\lrcorner\),%
+            %% 補助定理も可。
+        %sibling=axiom]%
+        %{lemma}
+    %\declaretheorem[name=メモ,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{note}
+    %\declaretheorem[name=命題,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{proposition}
+    %\declaretheorem[name=発言,style=definition,qed=\(\lrcorner\),%
+        %% ある講義ノートでは「注意」が使われている。
+        %% が，微妙にニュアンスが違う。
+        %sibling=axiom]%
+        %{remark}
+    %\declaretheorem[name=定理,style=definition,qed=\(\lrcorner\),%
+        %sibling=axiom]%
+        %{theorem}
+    %\declaretheorem[name=証明,style=definition,qed=\(\square\),%
+        %numbered=no]%
+        %{jproof}
 %\usepackage{siunitx}%
     %% For units.  Use for example `\SI{12.345}{\gram}`.
 \usepackage[all,error]{onlyamsmath}
