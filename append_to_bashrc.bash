@@ -1,8 +1,8 @@
 ### BEGIN append_to_bashrc.bash
 
-# Save the file as "append_to_bashrc.bash", and append the contents to
-# .bashrc using the command:
-#    cat append_to_bashrc.bash >> ~/.bashrc
+# Save the file as "append_to_bashrc.bash", and source the contents using:
+#     source ~/projects/riceissa.github.com/append_to_bashrc.bash
+# or something similar inside ".bashrc".
 
 PS1='[\u:\W]> '
 
@@ -13,8 +13,11 @@ alias {update,upgrade}='sudo aptitude update && sudo aptitude upgrade'
 # For git
 
 alias gstat='git status'
+alias gadd='git add'
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
+alias gdiff='git diff --color'
+alias gdiffstage='git diff --cached --color'
 
 # Surfraw
 
