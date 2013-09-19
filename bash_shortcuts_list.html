@@ -2,21 +2,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <style type="text/css">
+    body {
+        font-family: serif;
+    }
+    code {
+        padding-left: 4px;
+        padding-right: 4px;
+        background-color: rgb(232, 248, 255);
+        border: 1px solid rgb(162, 196, 208);
+        border-radius: 2px 2px 2px 2px;
+        /*display: block;*/
+    }
+
+    blockquote code, pre code{ /*, blockquote {*/
+        display: block;
+        padding: 10px;
+    }
+      </style>
   <title>Bash Cheat Sheet</title>
 </head>
 <body>
   <h1>Bash Cheat Sheet</h1>
 
-  <p>Here are some useful shortcuts when you're working in the Bash shell. This file is in alphabetical order.</p>
+  <p>This document lists useful shortcuts when working in the Bash shell. This file is in alphabetical order.</p>
 
 <h2>Conventions</h2>
 
+  <p>We will use the following conventions on this page in an effort to be concise.</p>
+
   <p>
-  <strong>Ctrl-a</strong> --- Hold the Control key and press 'a'.
+  <code>Ctrl</code>-<code>⟨key⟩</code> — Hold the control key and press the key labeled “key”.
   </p>
 
   <p id="esc">
-  <strong>Alt-a</strong> --- Hold the Alt key and press 'a'. The Alt key is sometimes called the <a href="http://en.wikipedia.org/wiki/Meta_key">Meta key</a>. If the Alt key doesn't work, try using the Escape key instead. (So <strong>Esc-a</strong> instead. You might need to let go of the Escape key before pressing 'a'.)
+  <strong>Alt-a</strong> — Hold the Alt key and press 'a'. The Alt key is sometimes called the <a href="http://en.wikipedia.org/wiki/Meta_key">Meta key</a>. If the Alt key doesn't work, try using the Escape key instead. (So <strong>Esc-a</strong> instead. You might need to let go of the Escape key before pressing 'a'.)
   </p>
 
   <p>
@@ -32,264 +52,266 @@
 <h2>Control</h2>
 
   <p>
-  <strong>Ctrl-a</strong> or <strong>[Home]</strong> --- Jump to the beginning of the line.
+  <strong>Ctrl-a</strong> or <strong>[Home]</strong> — Jump to the beginning of the line.
   </p>
 
   <p>
-  <strong>Ctrl-b</strong> or <strong>[Left Arrow Key]</strong> --- Go back one character.
+  <strong>Ctrl-b</strong> or <strong>[Left Arrow Key]</strong> — Go back one character.
   </p>
 
   <p>
-  <strong>Ctrl-c</strong> --- Terminate the command.
+  <strong>Ctrl-c</strong> — Terminate the command.
   </p>
 
   <p>
-  <strong>Ctrl-d</strong> --- Delete the character under the cursor. If the line is empty, exit the terminal. This command fails if the cursor is at the end of a non-empty line.
+  <strong>Ctrl-d</strong> — Delete the character under the cursor. If the line is empty, exit the terminal. This command fails if the cursor is at the end of a non-empty line.
   </p>
 
   <p>
-  <strong>Ctrl-e</strong> or <strong>[End]</strong> --- Jump to the end of the line.
+  <strong>Ctrl-e</strong> or <strong>[End]</strong> — Jump to the end of the line.
   </p>
 
   <p>
-  <strong>Ctrl-f</strong> or <strong>[Right Arrow Key]</strong> --- Go forward one character.
+  <strong>Ctrl-f</strong> or <strong>[Right Arrow Key]</strong> — Go forward one character.
   </p>
 
   <p>
-  <strong>Ctrl-g</strong> --- <a href="#ctrlg">See [Ctrl-r]</a>.
+  <strong>Ctrl-g</strong> — <a href="#ctrlg">See [Ctrl-r]</a>.
   </p>
 
   <p>
-  <strong>Ctrl-h</strong> or <strong>[Backspace]</strong> --- Delete the character to the left of the cursor.
+  <strong>Ctrl-h</strong> or <strong>[Backspace]</strong> — Delete the character to the left of the cursor.
   </p>
 
   <p>
-  <strong>Ctrl-k</strong> --- Cut from under the cursor to the end of the line.
+  <strong>Ctrl-k</strong> — Cut from under the cursor to the end of the line.
   </p>
 
   <p>
-  <strong>Ctrl-l</strong> --- Clear the screen leaving the current line untouched.
+  <strong>Ctrl-l</strong> — Clear the screen leaving the current line untouched.
   </p>
 
   <p>
-  <strong>Ctrl-m</strong> or <strong>[Enter]</strong> --- Enter the command.
+  <strong>Ctrl-m</strong> or <strong>[Enter]</strong> — Enter the command.
   </p>
 
   <p>
-  <strong>Ctrl-n</strong> or <strong>[Down Arrow Key]</strong> --- Show the next command in the history.
+  <strong>Ctrl-n</strong> or <strong>[Down Arrow Key]</strong> — Show the next command in the history.
   </p>
 
   <p>
-  <strong>Ctrl-o</strong> --- Accept the current line, then fetch that line and print it on the new line.
+  <strong>Ctrl-o</strong> — Accept the current line, then fetch that line and print it on the new line.
   </p>
 
   <p>
-  <strong>Ctrl-p</strong> or <strong>[Up Arrow Key]</strong> --- Show the previous command in the history.
+  <strong>Ctrl-p</strong> or <strong>[Up Arrow Key]</strong> — Show the previous command in the history.
   </p>
 
   <p id="ctrlq">
-  <strong>Ctrl-q</strong> --- Restore a frozen terminal. <a href="#ctrls">How do I freeze the terminal?</a>
+  <strong>Ctrl-q</strong> — Restore a frozen terminal. <a href="#ctrls">How do I freeze the terminal?</a>
   </p>
 
   <p id="ctrlg">
-  <strong>Ctrl-r</strong> --- Reverse-search the history incrementally. For example, pressing Ctrl-r, then typing 'string', then pressing Ctrl-r, Ctrl-r, ..., will scroll through all commands in the history containing 'string'. Press Ctrl-g to break out of the search.
+  <strong>Ctrl-r</strong> — Reverse-search the history incrementally. For example, pressing Ctrl-r, then typing 'string', then pressing Ctrl-r, Ctrl-r, ..., will scroll through all commands in the history containing 'string'. Press Ctrl-g to break out of the search.
   </p>
 
   <p id="ctrls">
-  <strong>Ctrl-s</strong> --- Freeze the terminal. <a href="#ctrlq">How do I restore?</a>
+  <strong>Ctrl-s</strong> — Freeze the terminal. <a href="#ctrlq">How do I restore?</a>
   </p>
 
   <p>
-  <strong>Ctrl-t</strong> --- Swap the character under the cursor with the character to the left of the cursor. If this is used at the end of the line, swap the last two characters before the cursor.
+  <strong>Ctrl-t</strong> — Swap the character under the cursor with the character to the left of the cursor. If this is used at the end of the line, swap the last two characters before the cursor.
   </p>
 
   <p>
-  <strong>Ctrl-u</strong> --- Cut from the left side of the cursor to the beginning of the line.
+  <strong>Ctrl-u</strong> — Cut from the left side of the cursor to the beginning of the line.
   </p>
 
   <p>
-  <strong>Ctrl-v</strong> --- Literally insert the next typed character. For example, [Ctrl-v][Tab] will insert a literal Tab character instead of completing the command.
+  <strong>Ctrl-v</strong> — Literally insert the next typed character. For example, [Ctrl-v][Tab] will insert a literal Tab character instead of completing the command.
   </p>
 
   <p>
-  <strong>Ctrl-w</strong> --- Cut one bigword to the left.
+  <strong>Ctrl-w</strong> — Cut one bigword to the left.
   </p>
 
   <p>
-  <strong>Ctrl-xx</strong> --- Jump between saved locations.<br />
+  <strong>Ctrl-xx</strong> — Jump between saved locations.<br />
     Pressing this will toggle between the current location and the beginning of the line.
     If you move the cursor after you have jumped to the beginning, then press this again, Bash will remember the location. Press this again to come back to the location you just saved.
   </p>
 
   <p>
-  <strong>Ctrl-y</strong> --- Paste the most recently cut text.
+  <strong>Ctrl-y</strong> — Paste the most recently cut text.
   </p>
 
   <p>
-  <strong>Ctrl-x Ctrl-u</strong> or <strong>Ctrl-/</strong> or <strong>Ctrl-_</strong> --- Undo the last operation.
+  <strong>Ctrl-x Ctrl-u</strong> or <strong>Ctrl-/</strong> or <strong>Ctrl-_</strong> — Undo the last operation.
   </p>
 
   <p>
-  <strong>Ctrl-x Ctrl-e</strong> --- Open the default editor and execute the edited command. (This can be set with the <code>$EDITOR</code> variable, for example entering <code>EDITOR=vim</code> on a separate line will set the editor to Vim.)
+  <strong>Ctrl-x Ctrl-e</strong> — Open the default editor and execute the edited command. (This can be set with the <code>$EDITOR</code> variable, for example entering <code>EDITOR=vim</code> on a separate line will set the editor to Vim.)
   </p>
 
   <p>
-  <strong>Ctrl-z</strong> --- Stop the current process. <code>bg</code> will restart it in the background and <code>fg</code> will restore it to the foreground.
+  <strong>Ctrl-z</strong> — Stop the current process. <code>bg</code> will restart it in the background and <code>fg</code> will restore it to the foreground.
   </p>
 
   <p id="next">
-  <strong>Ctrl-] a</strong> --- Move to the next occurrence of 'a'. <a href="#previous">How do I move to the previous occurrence of 'a'?</a>
+  <strong>Ctrl-] a</strong> — Move to the next occurrence of 'a'. <a href="#previous">How do I move to the previous occurrence of 'a'?</a>
   </p>
 
   <p>
-  <strong>Ctrl-x /</strong> --- Print filename completions.
+  <strong>Ctrl-x /</strong> — Print filename completions.
   </p>
 
   <p>
-  <strong>Ctrl-x ~</strong> --- Print username completions.
+  <strong>Ctrl-x ~</strong> — Print username completions.
   </p>
 
   <p>
-  <strong>Ctrl-x $</strong> --- Print shell variable completions.
+  <strong>Ctrl-x $</strong> — Print shell variable completions.
   </p>
 
   <p>
-  <strong>Ctrl-x @</strong> --- Show host name completions.
+  <strong>Ctrl-x @</strong> — Show host name completions.
   </p>
 
   <p>
-  <strong>Ctrl-x !</strong> --- Print command name completions.
+  <strong>Ctrl-x !</strong> — Print command name completions.
   </p>
 
   <h2>Alt</h2>
 
   <p>
-  <strong>Alt-b</strong> --- Go back one smallword.
+  <strong>Alt-b</strong> — Go back one smallword.
   </p>
 
   <p>
-  <strong>Alt-c</strong> --- Capitalise the character under the cursor and move to the end of the current smallword.
+  <strong>Alt-c</strong> — Capitalise the character under the cursor and move to the end of the current smallword.
   </p>
 
   <p>
-  <strong>Alt-d</strong> --- Cut from under the cursor to the end of the current smallword.
+  <strong>Alt-d</strong> — Cut from under the cursor to the end of the current smallword.
   </p>
 
   <p>
-  <strong>Alt-f</strong> --- Go forward one smallword. This does not work on the Gnome Terminal because Alt-f is bound to the "file" menu. <a href="#esc">However, [Esc][f] works.</a>
+  <strong>Alt-f</strong> — Go forward one smallword. This does not work on the Gnome Terminal because Alt-f is bound to the "file" menu. <a href="#esc">However, [Esc][f] works.</a>
   </p>
 
   <p>
-  <strong>Alt-l</strong> --- Make the current smallword all lowercase (from under the cursor to the end of the sequence) and move the cursor to the end the sequence.
+  <strong>Alt-l</strong> — Make the current smallword all lowercase (from under the cursor to the end of the sequence) and move the cursor to the end the sequence.
   </p>
 
   <p>
-  <strong>Alt-p</strong> --- Reverse search the history non-incrementally.
+  <strong>Alt-p</strong> — Reverse search the history non-incrementally.
   </p>
 
   <p>
-  <strong>Alt-r</strong> --- Revert all changes to the current line. For example, if you edited a command from your history, this would revert to the original.
+  <strong>Alt-r</strong> — Revert all changes to the current line. For example, if you edited a command from your history, this would revert to the original.
   </p>
 
   <p>
-  <strong>Alt-t</strong> --- Swap the current smallword with the previous smallword.
+  <strong>Alt-t</strong> — Swap the current smallword with the previous smallword.
   </p>
 
   <p>
-  <strong>Alt-u</strong> --- Make the current smallword uppercase. (From under the cursor to the end of the current sequence.)
+  <strong>Alt-u</strong> — Make the current smallword uppercase. (From under the cursor to the end of the current sequence.)
   </p>
 
   <p>
-  <strong>Alt-y</strong> --- Rotate between the most recently cut text. (Only works if the last action was either Ctrl-y or Alt-y.)
+  <strong>Alt-y</strong> — Rotate between the most recently cut text. (Only works if the last action was either Ctrl-y or Alt-y.)
   </p>
 
   <p>
-  <strong>Alt-Backspace</strong> --- Cut to the beginning of the current smallword. (From left side of the cursor to the beginning of the smallword. Does not cut leading whitespace.)
+  <strong>Alt-Backspace</strong> — Cut to the beginning of the current smallword. (From left side of the cursor to the beginning of the smallword. Does not cut leading whitespace.)
   </p>
 
   <p>
-  <strong>Alt-&lt;</strong> --- Move to the first item in the history.
+  <strong>Alt-&lt;</strong> — Move to the first item in the history.
   </p>
 
   <p>
-  <strong>Alt-&gt;</strong> --- Move to the last item in the history (the current command, not the last executed command).
+  <strong>Alt-&gt;</strong> — Move to the last item in the history (the current command, not the last executed command).
   </p>
 
   <p>
-  <strong>Alt-?</strong> --- Show the current completion list.
+  <strong>Alt-?</strong> — Show the current completion list.
   </p>
 
   <p>
-  <strong>Alt-*</strong> --- Insert all possible completions.
+  <strong>Alt-*</strong> — Insert all possible completions.
   </p>
 
   <p>
-  <strong>Alt-/</strong> --- Attempt filename completion.
+  <strong>Alt-/</strong> — Attempt filename completion.
   </p>
 
   <p>
-  <strong>Alt-~</strong> --- Attempt username completion.
+  <strong>Alt-~</strong> — Attempt username completion.
   </p>
 
   <p>
-  <strong>Alt-$</strong> --- Attempt shell variable completion.
+  <strong>Alt-$</strong> — Attempt shell variable completion.
   </p>
 
   <p>
-  <strong>Alt-@</strong> --- Attempt hostname completion.
+  <strong>Alt-@</strong> — Attempt hostname completion.
   </p>
 
   <p>
-  <strong>Alt-!</strong> --- Attempt command name completion.
+  <strong>Alt-!</strong> — Attempt command name completion.
   </p>
 
   <p>
-  <strong>Alt-&amp;</strong> --- Perform tilde expansion.
+  <strong>Alt-&amp;</strong> — Perform tilde expansion.
   </p>
 
   <p>
-  <strong>Alt-{</strong> --- Insert all filename completions within braces.
+  <strong>Alt-{</strong> — Insert all filename completions within braces.
   </p>
 
   <p>
-  <strong>Alt-.</strong> or <strong>Alt-_</strong> --- Paste the last argument of the previous command.
+  <strong>Alt-.</strong> or <strong>Alt-_</strong> — Paste the last argument of the previous command.
   </p>
 
   <p id="previous">
-  <strong>Alt-Ctrl-] a</strong> --- Move to the previous occurrence of 'a'. <a href="#next">How do I move to the next occurrence of 'a'?</a>
+  <strong>Alt-Ctrl-] a</strong> — Move to the previous occurrence of 'a'. <a href="#next">How do I move to the next occurrence of 'a'?</a>
   </p>
 
   <p>
-  <strong>Alt-Ctrl-e</strong> --- Expand the current line. For example, ~Alt-Ctrl-e will expand to /home/$USER.
+  <strong>Alt-Ctrl-e</strong> — Expand the current line. For example, ~Alt-Ctrl-e will expand to /home/$USER.
   </p>
 
   <p>
-  <strong>Alt-Ctrl-y</strong> --- Paste the second bigword of the previous command.
+  <strong>Alt-Ctrl-y</strong> — Paste the second bigword of the previous command.
   </p>
 
   <h2>Other</h2>
 
   <p>
-  <strong>Shift-[Page Up]</strong> --- Scroll up one screen. (This may not work for some terminals. Use your mouse instead if you have one.)
+  <strong>Shift-[Page Up]</strong> — Scroll up one screen. (This may not work for some terminals. Use your mouse instead if you have one.)
   </p>
 
   <p>
-  <strong>Shift-[Page Down]</strong> --- Scroll down one screen.
+  <strong>Shift-[Page Down]</strong> — Scroll down one screen.
   </p>
 
   <h2>Working with Your History</h2>
 
   <p>The following commands are useful if you want to execute similar commands from your history.</p>
 
-  <p><code>!!</code> --- An alias for the previous command. (Useful for <code>sudo !!</code>, for example.)</p>
-  <p><code>!string</code> --- Execute the most recent command in the history beginning with 'string'.</p>
-  <p><code>!string:p</code> --- Print the most recent command in the history beginning with 'string', so you see what <em>would</em> have been run if you typed <code>!string</code>.</p>
-  <p><code>!n</code> --- Execute the <em>n</em>th command in the history, where <em>n</em> is a positive integer. Type <code>history</code> to get a list.</p>
-  <p><code>!$</code> --- An alias for the last bigword of the previous command.</p>
-  <p><code>!^</code> --- An alias for the first bigword of the previous command.</p>
-  <p><code>!*</code> --- An alias for the previous command without the last bigword. (So if the previous command was '<code>ls -A /home/$USER</code>', then <code>!*</code> would give just '<code>ls -A</code>'.)</p>
-  <p><code>!n:p</code> --- Print the <em>n</em>th command in the history. <code>!$:p</code>, <code>!^:p</code>, ..., also work.</p>
-  <p><code>^string1^string2</code> --- In the previous command, replace the first occurrence of string1 with string2, then execute.</p>
+  <p><code>!!</code> — An alias for the previous command. (Useful for <code>sudo !!</code>, for example.)</p>
+  <p><code>!string</code> — Execute the most recent command in the history beginning with 'string'.</p>
+  <p><code>!string:p</code> — Print the most recent command in the history beginning with 'string', so you see what <em>would</em> have been run if you typed <code>!string</code>.</p>
+  <p><code>!n</code> — Execute the <em>n</em>th command in the history, where <em>n</em> is a positive integer. Type <code>history</code> to get a list.</p>
+  <p><code>!$</code> — An alias for the last bigword of the previous command.</p>
+  <p><code>!^</code> — An alias for the first bigword of the previous command.</p>
+  <p><code>!*</code> — An alias for the previous command without the last bigword. (So if the previous command was '<code>ls -A /home/$USER</code>', then <code>!*</code> would give just '<code>ls -A</code>'.)</p>
+  <p><code>!n:p</code> — Print the <em>n</em>th command in the history. <code>!$:p</code>, <code>!^:p</code>, ..., also work.</p>
+  <p><code>^string1^string2</code> — In the previous command, replace the first occurrence of string1 with string2, then execute.</p>
+  <p>References:</p>
+  <p>http://ss64.com/bash/syntax-keyboard.html</p>
   <p>~</p>
   <p>~</p>
   <p>~</p>
