@@ -19,6 +19,14 @@
         display: block;
         padding: 10px;
     }
+    .key {
+        padding-left: 4px;
+        padding-right: 4px;
+        background-color: rgb(250, 240, 235);
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 2px 2px 2px 2px;
+        font-family: monospace;
+    }
       </style>
   <title>Bash Cheat Sheet</title>
 </head>
@@ -29,289 +37,307 @@
 
 <h2>Conventions</h2>
 
-  <p>We will use the following conventions on this page in an effort to be concise.</p>
+  <p>We <span class="key">will</span> use the following conventions on this page in an effort to be concise.</p>
 
-  <p>
-  <code>Ctrl</code>-<code>⟨key⟩</code> — Hold the control key and press the key labeled “key”.
+  <p id="ctrl">
+  <span class="key">Ctrl</span>-<span class="key">⟨key⟩</span> — Hold the Control key and press the key ⟨key⟩.
+  For instance, “<span class="key">Ctrl</span>-<span class="key">a</span>” would mean “hold the control key and press ‘a’&nbsp;”.
+  When an upper case letter is necessary, we will write <span class="key">Shift</span>.
+  So “<span class="key">Ctrl</span>-<span class="key">Shift</span>-<span class="key">a</span>” means “hold the control key and the shift key, and press ‘a’&nbsp;”.
+  To avoid confusion, we will never write uppercase letters when describing these shortcuts, e.g.&nbsp;<span class="key">A</span>.
   </p>
 
   <p id="esc">
-  <strong>Alt-a</strong> — Hold the Alt key and press 'a'. The Alt key is sometimes called the <a href="http://en.wikipedia.org/wiki/Meta_key">Meta key</a>. If the Alt key doesn't work, try using the Escape key instead. (So <strong>Esc-a</strong> instead. You might need to let go of the Escape key before pressing 'a'.)
+  <span class="key">Alt</span>-<span class="key">⟨key⟩</span> — Hold the Alt key and press the key ⟨key⟩.
+  The Alt key is sometimes called the <a href="http://en.wikipedia.org/wiki/Meta_key">Meta key</a>. If the Alt key doesn’t work, try using the Escape key instead.
+  (So <span class="key">Esc</span>-<span class="key">⟨key⟩</span> instead.
+  It may be necessary to release the Escape key before pressing ⟨key⟩.)
   </p>
 
-  <p>
-  This page is <a href="http://en.wikipedia.org/wiki/Case_sensitivity"><em>case sensitive</em></a> so 'a' is different from 'A'. 'A' is the same as 'Shift-a'.
+  <p>A <em>smallword</em> is any string of characters that contain <em>only</em> characters from the set {a–z,A–Z,0–9}. Smallwords are delimited by non-alphanumeric characters (whitespace, full stop, caret, etc.). This is similar to a lowercase “w” in the Vi(m) editor.
   </p>
 
-  <p>A <strong>smallword</strong> is any string of characters that contain <em>only</em> characters from the set {a-z,A-Z,0-9}. Smallwords are delimited by non-alphanumeric characters (whitespace, full stop, caret, etc.). This is similar to a lowercase 'w' in the Vi editor.
-  </p>
-
-  <p id="word">A <strong>bigword</strong> is any string of characters <em>not containing a whitespace</em>. Bigwords are delimited by whitespace characters (space, tab, etc.). This is similar to an uppercase 'W' in the Vi editor.
+  <p id="word">A <em>bigword</em> is any string of characters <em>not containing a whitespace</em>. Bigwords are delimited by whitespace characters (space, tab, etc.). This is similar to an uppercase “W” in the Vi(m) editor.
   </p>
 
 <h2>Control</h2>
 
   <p>
-  <strong>Ctrl-a</strong> or <strong>[Home]</strong> — Jump to the beginning of the line.
+  <span class="key">Ctrl</span>-<span class="key">a</span> or <span class="key">Home</span> — Jump to the beginning of the line.
   </p>
 
   <p>
-  <strong>Ctrl-b</strong> or <strong>[Left Arrow Key]</strong> — Go back one character.
+  <span class="key">Ctrl</span>-<span class="key">b</span> or <span class="key">Left-Arrow</span> — Go back one character.
   </p>
 
   <p>
-  <strong>Ctrl-c</strong> — Terminate the command.
+  <span class="key">Ctrl</span>-<span class="key">c</span> — Terminate the command.
   </p>
 
   <p>
-  <strong>Ctrl-d</strong> — Delete the character under the cursor. If the line is empty, exit the terminal. This command fails if the cursor is at the end of a non-empty line.
+  <span class="key">Ctrl</span>-<span class="key">d</span> — Delete the character under the cursor. If the line is empty, exit the terminal. This command fails if the cursor is at the end of a non-empty line.
   </p>
 
   <p>
-  <strong>Ctrl-e</strong> or <strong>[End]</strong> — Jump to the end of the line.
+  <span class="key">Ctrl</span>-<span class="key">e</span> or <span class="key">End</span> — Jump to the end of the line.
   </p>
 
   <p>
-  <strong>Ctrl-f</strong> or <strong>[Right Arrow Key]</strong> — Go forward one character.
+  <span class="key">Ctrl</span>-<span class="key">f</span> or <span class="key">Right-Arrow</span> — Go forward one character.
   </p>
 
   <p>
-  <strong>Ctrl-g</strong> — <a href="#ctrlg">See [Ctrl-r]</a>.
+  <span class="key">Ctrl</span>-<span class="key">g</span> — <a href="#ctrlg">See [Ctrl-r]</a>.
   </p>
 
   <p>
-  <strong>Ctrl-h</strong> or <strong>[Backspace]</strong> — Delete the character to the left of the cursor.
+  <span class="key">Ctrl</span>-<span class="key">h</span> or <span class="key">Backspace</span> — Delete the character to the left of the cursor.
   </p>
 
   <p>
-  <strong>Ctrl-k</strong> — Cut from under the cursor to the end of the line.
+  <span class="key">Ctrl</span>-<span class="key">k</span> — Cut from under the cursor to the end of the line.
   </p>
 
   <p>
-  <strong>Ctrl-l</strong> — Clear the screen leaving the current line untouched.
+  <span class="key">Ctrl</span>-<span class="key">l</span> — Clear the screen leaving the current line untouched.
   </p>
 
   <p>
-  <strong>Ctrl-m</strong> or <strong>[Enter]</strong> — Enter the command.
+  <span class="key">Ctrl</span>-<span class="key">m</span> or <span class="key">Enter</span> — Enter the command.
   </p>
 
   <p>
-  <strong>Ctrl-n</strong> or <strong>[Down Arrow Key]</strong> — Show the next command in the history.
+  <span class="key">Ctrl</span>-<span class="key">n</span> or <span class="key">Down-Arrow</span> — Show the next command in the history.
   </p>
 
   <p>
-  <strong>Ctrl-o</strong> — Accept the current line, then fetch that line and print it on the new line.
-  </p>
+  <span class="key">Ctrl</span>-<span class="key">o</span> — Accept the current line, then fetch the next line and reproduce it on the current line for editing.
+  Consider the following:</p>
+<p><pre><code># Comments will begin with “#”, like this line.
+$ echo 1
+1
+$ echo 2
+2
+# Now press Ctrl-p twice, which fetches “echo 1”.
+$ echo 1 # Now press Ctrl-o. The result should be:
+1
+$ echo 2 # This line is automatically produced.</code></pre></p>
 
   <p>
-  <strong>Ctrl-p</strong> or <strong>[Up Arrow Key]</strong> — Show the previous command in the history.
+  <span class="key">Ctrl</span>-<span class="key">p</span> or <span class="key">[Up Arrow Key]</span> — Show the previous command in the history.
   </p>
 
   <p id="ctrlq">
-  <strong>Ctrl-q</strong> — Restore a frozen terminal. <a href="#ctrls">How do I freeze the terminal?</a>
+  <span class="key">Ctrl</span>-<span class="key">q</span> — Restore a frozen terminal. <a href="#ctrls">How do I freeze the terminal?</a>
   </p>
 
   <p id="ctrlg">
-  <strong>Ctrl-r</strong> — Reverse-search the history incrementally. For example, pressing Ctrl-r, then typing 'string', then pressing Ctrl-r, Ctrl-r, ..., will scroll through all commands in the history containing 'string'. Press Ctrl-g to break out of the search.
+  <span class="key">Ctrl</span>-<span class="key">r</span> — Reverse-search the history incrementally. For example, pressing Ctrl-r, then typing 'string', then pressing Ctrl-r, Ctrl-r, ..., will scroll through all commands in the history containing 'string'. Press Ctrl-g to break out of the search.
   </p>
 
   <p id="ctrls">
-  <strong>Ctrl-s</strong> — Freeze the terminal. <a href="#ctrlq">How do I restore?</a>
+  <span class="key">Ctrl</span>-<span class="key">s</span> — Freeze the terminal. <a href="#ctrlq">How do I restore?</a>
   </p>
 
   <p>
-  <strong>Ctrl-t</strong> — Swap the character under the cursor with the character to the left of the cursor. If this is used at the end of the line, swap the last two characters before the cursor.
+  <span class="key">Ctrl</span>-<span class="key">t</span> — Swap the character under the cursor with the character to the left of the cursor. If this is used at the end of the line, swap the last two characters before the cursor.
   </p>
 
   <p>
-  <strong>Ctrl-u</strong> — Cut from the left side of the cursor to the beginning of the line.
+  <span class="key">Ctrl</span>-<span class="key">u</span> — Cut from the left side of the cursor to the beginning of the line.
   </p>
 
   <p>
-  <strong>Ctrl-v</strong> — Literally insert the next typed character. For example, [Ctrl-v][Tab] will insert a literal Tab character instead of completing the command.
+  <span class="key">Ctrl</span>-<span class="key">v</span> — Literally insert the next typed character. For example, [Ctrl-v][Tab] will insert a literal Tab character instead of completing the command.
   </p>
 
   <p>
-  <strong>Ctrl-w</strong> — Cut one bigword to the left.
+  <span class="key">Ctrl</span>-<span class="key">w</span> — Cut one bigword to the left.
   </p>
 
   <p>
-  <strong>Ctrl-xx</strong> — Jump between saved locations.<br />
+  <span class="key">Ctrl</span>-<span class="key">xx</span> — Jump between saved locations.<br />
     Pressing this will toggle between the current location and the beginning of the line.
     If you move the cursor after you have jumped to the beginning, then press this again, Bash will remember the location. Press this again to come back to the location you just saved.
   </p>
 
   <p>
-  <strong>Ctrl-y</strong> — Paste the most recently cut text.
+  <span class="key">Ctrl</span>-<span class="key">y</span> — Paste the most recently cut text.
   </p>
 
   <p>
-  <strong>Ctrl-x Ctrl-u</strong> or <strong>Ctrl-/</strong> or <strong>Ctrl-_</strong> — Undo the last operation.
+  <span class="key">Ctrl</span>-<span class="key">x Ctrl</span>-<span class="key">u</span> or <span class="key">Ctrl</span>-<span class="key">/</span> or <span class="key">Ctrl</span>-<span class="key">_</span> — Undo the last operation.
   </p>
 
   <p>
-  <strong>Ctrl-x Ctrl-e</strong> — Open the default editor and execute the edited command. (This can be set with the <code>$EDITOR</code> variable, for example entering <code>EDITOR=vim</code> on a separate line will set the editor to Vim.)
+  <span class="key">Ctrl</span>-<span class="key">x Ctrl</span>-<span class="key">e</span> — Open the default editor and execute the edited command. (This can be set with the <span class="key">$EDITOR</span> variable, for example entering <span class="key">EDITOR=vim</span> on a separate line will set the editor to Vim.)
   </p>
 
   <p>
-  <strong>Ctrl-z</strong> — Stop the current process. <code>bg</code> will restart it in the background and <code>fg</code> will restore it to the foreground.
+  <span class="key">Ctrl</span>-<span class="key">z</span> — Stop the current process. <span class="key">bg</span> will restart it in the background and <span class="key">fg</span> will restore it to the foreground.
   </p>
 
   <p id="next">
-  <strong>Ctrl-] a</strong> — Move to the next occurrence of 'a'. <a href="#previous">How do I move to the previous occurrence of 'a'?</a>
+  <span class="key">Ctrl</span>-<span class="key">] a</span> — Move to the next occurrence of 'a'. <a href="#previous">How do I move to the previous occurrence of 'a'?</a>
   </p>
 
   <p>
-  <strong>Ctrl-x /</strong> — Print filename completions.
+  <span class="key">Ctrl</span>-<span class="key">x /</span> — Print filename completions.
   </p>
 
   <p>
-  <strong>Ctrl-x ~</strong> — Print username completions.
+  <span class="key">Ctrl</span>-<span class="key">x ~</span> — Print username completions.
   </p>
 
   <p>
-  <strong>Ctrl-x $</strong> — Print shell variable completions.
+  <span class="key">Ctrl</span>-<span class="key">x $</span> — Print shell variable completions.
   </p>
 
   <p>
-  <strong>Ctrl-x @</strong> — Show host name completions.
+  <span class="key">Ctrl</span>-<span class="key">x @</span> — Show host name completions.
   </p>
 
   <p>
-  <strong>Ctrl-x !</strong> — Print command name completions.
+  <span class="key">Ctrl</span>-<span class="key">x !</span> — Print command name completions.
   </p>
 
   <h2>Alt</h2>
 
   <p>
-  <strong>Alt-b</strong> — Go back one smallword.
+  <span class="key">Alt</span>-<span class="key">b</span> — Go back one smallword.
   </p>
 
   <p>
-  <strong>Alt-c</strong> — Capitalise the character under the cursor and move to the end of the current smallword.
+  <span class="key">Alt</span>-<span class="key">c</span> — Capitalise the character under the cursor and move to the end of the current smallword.
   </p>
 
   <p>
-  <strong>Alt-d</strong> — Cut from under the cursor to the end of the current smallword.
+  <span class="key">Alt</span>-<span class="key">d</span> — Cut from under the cursor to the end of the current smallword.
   </p>
 
   <p>
-  <strong>Alt-f</strong> — Go forward one smallword. This does not work on the Gnome Terminal because Alt-f is bound to the "file" menu. <a href="#esc">However, [Esc][f] works.</a>
+  <span class="key">Alt</span>-<span class="key">f</span> — Go forward one smallword. This does not work on the Gnome Terminal because Alt-f is bound to the "file" menu. <a href="#esc">However, [Esc][f] works.</a>
   </p>
 
   <p>
-  <strong>Alt-l</strong> — Make the current smallword all lowercase (from under the cursor to the end of the sequence) and move the cursor to the end the sequence.
+  <span class="key">Alt</span>-<span class="key">l</span> — Make the current smallword all lowercase (from under the cursor to the end of the sequence) and move the cursor to the end the sequence.
   </p>
 
   <p>
-  <strong>Alt-p</strong> — Reverse search the history non-incrementally.
+  <span class="key">Alt</span>-<span class="key">p</span> — Reverse search the history non-incrementally.
   </p>
 
   <p>
-  <strong>Alt-r</strong> — Revert all changes to the current line. For example, if you edited a command from your history, this would revert to the original.
+  <span class="key">Alt</span>-<span class="key">r</span> — Revert all changes to the current line. For example, if you edited a command from your history, this would revert to the original.
   </p>
 
   <p>
-  <strong>Alt-t</strong> — Swap the current smallword with the previous smallword.
+  <span class="key">Alt</span>-<span class="key">t</span> — Swap the current smallword with the previous smallword.
   </p>
 
   <p>
-  <strong>Alt-u</strong> — Make the current smallword uppercase. (From under the cursor to the end of the current sequence.)
+  <span class="key">Alt</span>-<span class="key">u</span> — Make the current smallword uppercase. (From under the cursor to the end of the current sequence.)
   </p>
 
   <p>
-  <strong>Alt-y</strong> — Rotate between the most recently cut text. (Only works if the last action was either Ctrl-y or Alt-y.)
+  <span class="key">Alt</span>-<span class="key">y</span> — Rotate between the most recently cut text. (Only works if the last action was either Ctrl-y or Alt-y.)
   </p>
 
   <p>
-  <strong>Alt-Backspace</strong> — Cut to the beginning of the current smallword. (From left side of the cursor to the beginning of the smallword. Does not cut leading whitespace.)
+  <span class="key">Alt</span>-<span class="key">Backspace</span> — Cut to the beginning of the current smallword. (From left side of the cursor to the beginning of the smallword. Does not cut leading whitespace.)
   </p>
 
   <p>
-  <strong>Alt-&lt;</strong> — Move to the first item in the history.
+  <span class="key">Alt</span>-<span class="key">&lt;</span> — Move to the first item in the history.
   </p>
 
   <p>
-  <strong>Alt-&gt;</strong> — Move to the last item in the history (the current command, not the last executed command).
+  <span class="key">Alt</span>-<span class="key">&gt;</span> — Move to the last item in the history (the current command, not the last executed command).
   </p>
 
   <p>
-  <strong>Alt-?</strong> — Show the current completion list.
+  <span class="key">Alt</span>-<span class="key">?</span> — Show the current completion list.
   </p>
 
   <p>
-  <strong>Alt-*</strong> — Insert all possible completions.
+  <span class="key">Alt</span>-<span class="key">*</span> — Insert all possible completions.
   </p>
 
   <p>
-  <strong>Alt-/</strong> — Attempt filename completion.
+  <span class="key">Alt</span>-<span class="key">/</span> — Attempt filename completion.
   </p>
 
   <p>
-  <strong>Alt-~</strong> — Attempt username completion.
+  <span class="key">Alt</span>-<span class="key">~</span> — Attempt username completion.
   </p>
 
   <p>
-  <strong>Alt-$</strong> — Attempt shell variable completion.
+  <span class="key">Alt</span>-<span class="key">$</span> — Attempt shell variable completion.
   </p>
 
   <p>
-  <strong>Alt-@</strong> — Attempt hostname completion.
+  <span class="key">Alt</span>-<span class="key">@</span> — Attempt hostname completion.
   </p>
 
   <p>
-  <strong>Alt-!</strong> — Attempt command name completion.
+  <span class="key">Alt</span>-<span class="key">!</span> — Attempt command name completion.
   </p>
 
   <p>
-  <strong>Alt-&amp;</strong> — Perform tilde expansion.
+  <span class="key">Alt</span>-<span class="key">&amp;</span> — Perform tilde expansion.
   </p>
 
   <p>
-  <strong>Alt-{</strong> — Insert all filename completions within braces.
+  <span class="key">Alt</span>-<span class="key">{</span> — Insert all filename completions within braces.
   </p>
 
   <p>
-  <strong>Alt-.</strong> or <strong>Alt-_</strong> — Paste the last argument of the previous command.
+  <span class="key">Alt</span>-<span class="key">.</span> or <span class="key">Alt</span>-<span class="key">_</span> — Paste the last argument of the previous command.
+  Press the same key combination multiple times to go further back in history.
   </p>
 
   <p id="previous">
-  <strong>Alt-Ctrl-] a</strong> — Move to the previous occurrence of 'a'. <a href="#next">How do I move to the next occurrence of 'a'?</a>
+  <span class="key">Alt</span>-<span class="key">Ctrl</span>-<span class="key">] a</span> — Move to the previous occurrence of 'a'. <a href="#next">How do I move to the next occurrence of 'a'?</a>
   </p>
 
   <p>
-  <strong>Alt-Ctrl-e</strong> — Expand the current line. For example, ~Alt-Ctrl-e will expand to /home/$USER.
+  <span class="key">Alt</span>-<span class="key">Ctrl</span>-<span class="key">e</span> — Expand the current line. For example, <span class="key">~</span> will expand to one’s home directory.
+  Expressions with relative history (e.g.&nbsp;<span class="key">!!</span>), aliases, and shell variables (e.g.&nbsp;<span class="key">SHELL</span> and <span class="key">TERM</span>) will also be expanded.
   </p>
 
   <p>
-  <strong>Alt-Ctrl-y</strong> — Paste the second bigword of the previous command.
+  <span class="key">Alt</span>-<span class="key">Ctrl</span>-<span class="key">y</span> — Paste the second bigword of the previous command.
   </p>
 
   <h2>Other</h2>
 
   <p>
-  <strong>Shift-[Page Up]</strong> — Scroll up one screen. (This may not work for some terminals. Use your mouse instead if you have one.)
+  <span class="key">Shift</span>-<span class="key">[Page Up]</span> — Scroll up one screen. (This may not work for some terminals. Use your mouse instead if you have one.)
   </p>
 
   <p>
-  <strong>Shift-[Page Down]</strong> — Scroll down one screen.
+  <span class="key">Shift</span>-<span class="key">[Page Down]</span> — Scroll down one screen.
   </p>
 
   <h2>Working with Your History</h2>
 
   <p>The following commands are useful if you want to execute similar commands from your history.</p>
 
-  <p><code>!!</code> — An alias for the previous command. (Useful for <code>sudo !!</code>, for example.)</p>
-  <p><code>!string</code> — Execute the most recent command in the history beginning with 'string'.</p>
-  <p><code>!string:p</code> — Print the most recent command in the history beginning with 'string', so you see what <em>would</em> have been run if you typed <code>!string</code>.</p>
-  <p><code>!n</code> — Execute the <em>n</em>th command in the history, where <em>n</em> is a positive integer. Type <code>history</code> to get a list.</p>
-  <p><code>!$</code> — An alias for the last bigword of the previous command.</p>
-  <p><code>!^</code> — An alias for the first bigword of the previous command.</p>
-  <p><code>!*</code> — An alias for the previous command without the last bigword. (So if the previous command was '<code>ls -A /home/$USER</code>', then <code>!*</code> would give just '<code>ls -A</code>'.)</p>
-  <p><code>!n:p</code> — Print the <em>n</em>th command in the history. <code>!$:p</code>, <code>!^:p</code>, ..., also work.</p>
-  <p><code>^string1^string2</code> — In the previous command, replace the first occurrence of string1 with string2, then execute.</p>
+  <p><span class="key">!!</span> — An alias for the previous command. (Useful for <span class="key">sudo !!</span>, for example.)</p>
+  <p><span class="key">!string</span> — Execute the most recent command in the history beginning with 'string'.</p>
+  <p><span class="key">!string:p</span> — Print the most recent command in the history beginning with 'string', so you see what <em>would</em> have been run if you typed <span class="key">!string</span>.</p>
+  <p><span class="key">!n</span> — Execute the <em>n</em>th command in the history, where <em>n</em> is a positive integer. Type <span class="key">history</span> to get a list.</p>
+  <p><span class="key">!$</span> — An alias for the last bigword of the previous command.</p>
+  <p><span class="key">!^</span> — An alias for the first bigword of the previous command.</p>
+  <p><span class="key">!*</span> — An alias for the previous command without the last bigword. (So if the previous command was '<span class="key">ls -A /home/$USER</span>', then <span class="key">!*</span> would give just '<span class="key">ls -A</span>'.)</p>
+  <p><span class="key">!n:p</span> — Print the <em>n</em>th command in the history. <span class="key">!$:p</span>, <span class="key">!^:p</span>, ..., also work.</p>
+  <p><span class="key">^string1^string2</span> — In the previous command, replace the first occurrence of string1 with string2, then execute.</p>
   <p>References:</p>
+  <p>https://www.gnu.org/software/bash/manual/bashref.html#Introduction-and-Notation</p>
   <p>http://ss64.com/bash/syntax-keyboard.html</p>
+  <p>http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/</p>
+  <p>http://halotis.com/2010/07/06/bash-keyboard-shortcuts/</p>
+  <p>http://stackoverflow.com/questions/211378/hidden-features-of-bash</p>
   <p>~</p>
   <p>~</p>
   <p>~</p>
