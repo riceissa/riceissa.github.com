@@ -5,6 +5,7 @@
 %%%%%%%%%%%%%%%%%%%% Packages
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{datetime}
 %\usepackage[margin=1in]{geometry}%
     %% Use 1 inch margins (all around).
 %\usepackage{setspace}%
@@ -149,6 +150,29 @@
 \hfill #4
 
 \bigskip}
+%%%%% BEGIN define noindentnext
+    %% Do not indent the next paragraph; works even if there are blank
+    %% lines in between this command and the paragraph.
+\makeatletter
+\newcommand{\noindentnext}{\@afterindentfalse\@afterheading}
+\makeatother
+%%%%% END define noindentnext
+\renewcommand{\dateseparator}{~}
+\newcommand{\heading}[2]{\section*{#1}
+
+\noindent\yyyymmdddate#2
+
+\bigskip
+
+\noindentnext}
+\newcommand{\header}[2]{\heading{#1}{#2}}
+\newcommand{\threestars}{\nobreak\begin{center}
+\(\star~~~~\star~~~~\star\)
+\end{center}
+
+\nobreak\noindentnext}
+\newcommand{\shift}{\nobreak\bigskip\noindentnext}
+\newcommand{\dialogue}[1]{---\(\,\)#1}
 %%%%%%%%%%%%%%%%%%%% For maths
 %\crefname{axiom}{axiom}{axioms}
 %\crefname{corollary}{corollary}{corollaries}
